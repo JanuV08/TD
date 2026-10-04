@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://r7bwl4xlp7vi"]
+
+[ext_resource type="Texture2D" uid="uid://b4au6rh2h4uw0" path="res://blue-ball.svg" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhj6x"]
+
+[node name="enemy" type="Node2D" unique_id=1219256903]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=798733214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=957754664]
+shape = SubResource("CircleShape2D_yhj6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1281770163]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.34375003, 0.34375)
+texture = ExtResource("1_7k104")

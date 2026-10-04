@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://r7bwl4xlp7vi" path="res://enemy.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://path_follow_2d.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://konec.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://label_hp.gd" id="5_lquwl"]
+
+[sub_resource type="Curve2D" id="Curve2D_ig7tw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 105, 101, 0, 0, 0, 0, 666, 114, 0, 0, 0, 0, 682, 316, 0, 0, 0, 0, 91, 417, 0, 0, 0, 0, 575, 592, 0, 0, 0, 0, 805, 593)
+}
+point_count = 6
+
+[node name="main" type="Node2D" unique_id=1509445311]
+script = ExtResource("1_ig7tw")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1530383361]
+curve = SubResource("Curve2D_ig7tw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=536372481]
+position = Vector2(105, 101)
+rotation = 0.02316876
+script = ExtResource("2_h2yge")
+
+[node name="enemy" parent="Path2D/PathFollow2D" unique_id=1219256903 instance=ExtResource("2_0xm2m")]
+position = Vector2(1.999321, -0.051887512)
+
+[node name="Area2D" parent="." unique_id=385382761 instance=ExtResource("4_1bvp3")]
+position = Vector2(805, 593)
+
+[node name="labelHP" type="Label" parent="." unique_id=59424855]
+offset_left = 345.0
+offset_top = 236.0
+offset_right = 382.0
+offset_bottom = 260.0
+text = "Health: 100"
+script = ExtResource("5_lquwl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
