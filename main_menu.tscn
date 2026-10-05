@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bdcc0xw23oamx"]
+
+[ext_resource type="Script" uid="uid://bbqvbkh1q8p0h" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=1862327775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1106383973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1607211019]
+layout_mode = 2
+alignment = 1
+
+[node name="playBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=211333247]
+layout_mode = 2
+text = "Start Game"
+
+[node name="quitBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1565458127]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/playBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quitBtn" to="." method="_on_quit_btn_pressed"]
