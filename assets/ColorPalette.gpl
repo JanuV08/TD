@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Cyberpunk 16
+Columns: 4
+#
+ 15  23  42	0F172A Dark Shadow
+ 30  41  59	1E293B Dark Metal
+ 51  65  85	334155 Base Metal
+100 116 139	64748B Metal Highlight
+ 31  11  30	1F0B1E Plate Shadow
+ 59  20  59	3B143B Dark Plate
+ 98  27  88	621B58 Base Plate
+139  38 110	8B266E Plate Highlight
+  0  75  91	004B5B Neon Cyan Glow
+  0 180 216	00B4D8 Neon Cyan Base
+144 224 239	90E0EF Neon Cyan Core
+ 74   0  51	4A0033 Neon Pink Glow
+255   0 127	FF007F Neon Pink Base
+255 163 215	FFA3D7 Neon Pink Core
+255 183   3	FFB703 Warning Yellow
+255 255 255	FFFFFF Pure White
