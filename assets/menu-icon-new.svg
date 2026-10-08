@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 128 80"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="menu-icon-new.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="3.7786019"
+     inkscape:cx="4.1020464"
+     inkscape:cy="34.007288"
+     inkscape:window-width="1857"
+     inkscape:window-height="1057"
+     inkscape:window-x="55"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g9" />
+  <defs
+     id="defs4">
+    <!-- Cyan Neon Glow -->
+    <filter
+       id="cyan-glow"
+       x="-0.073684211"
+       y="-0.13125"
+       width="1.1473684"
+       height="1.2625">
+      <feGaussianBlur
+         stdDeviation="3.5"
+         result="blur"
+         id="feGaussianBlur1" />
+      <feMerge
+         id="feMerge2">
+        <feMergeNode
+           in="blur"
+           id="feMergeNode1" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode2" />
+      </feMerge>
+    </filter>
+    <!-- Magenta Aberration Glow -->
+    <filter
+       id="magenta-glow"
+       x="-0.054545455"
+       y="-0.096774194"
+       width="1.1090909"
+       height="1.1935484">
+      <feGaussianBlur
+         stdDeviation="2.5"
+         result="blur"
+         id="feGaussianBlur2" />
+      <feMerge
+         id="feMerge4">
+        <feMergeNode
+           in="blur"
+           id="feMergeNode3" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Chromatic Offset Shadow (Magenta shift) -->
+  <g
+     fill="#ff007f"
+     opacity="0.8"
+     filter="url(#magenta-glow)"
+     id="g9">
+    <!-- Top Line Shadow -->
+    <rect
+       x="12"
+       y="10"
+       width="90"
+       height="14"
+       rx="3"
+       id="rect4"
+       style="fill:#ff007f" />
+    <rect
+       x="104"
+       y="10"
+       width="12"
+       height="14"
+       rx="2"
+       id="rect5"
+       style="fill:#ff007f" />
+    <!-- Middle Line Shadow -->
+    <rect
+       x="6"
+       y="34"
+       width="88"
+       height="14"
+       rx="3"
+       id="rect6"
+       style="fill:#ff007f" />
+    <rect
+       x="96"
+       y="34"
+       width="18"
+       height="14"
+       rx="2"
+       id="rect7"
+       style="fill:#ff007f" />
+    <!-- Bottom Line Shadow -->
+    <rect
+       x="14"
+       y="58"
+       width="76"
+       height="14"
+       rx="3"
+       id="rect8"
+       style="fill:#ff007f" />
+    <rect
+       x="92"
+       y="58"
+       width="14"
+       height="14"
+       rx="2"
+       id="rect9"
+       style="fill:#ff007f" />
+  </g>
+  <!-- Main Glowing Cyan Lines & Glitch Artifacts -->
+  <g
+     filter="url(#cyan-glow)"
+     id="g18">
+    <!-- TOP LINE -->
+    <rect
+       x="16"
+       y="8"
+       width="86"
+       height="14"
+       rx="3"
+       fill="#00ffff"
+       id="rect10"
+       style="fill:#00b4d8" />
+    <rect
+       x="104"
+       y="8"
+       width="10"
+       height="14"
+       rx="2"
+       fill="#00ffff"
+       id="rect11"
+       style="fill:#00b4d8" />
+    <!-- White hot slice glitch -->
+    <rect
+       x="78"
+       y="8"
+       width="6"
+       height="14"
+       fill="#ffffff"
+       id="rect12"
+       style="fill:none" />
+    <!-- MIDDLE LINE -->
+    <rect
+       x="10"
+       y="32"
+       width="82"
+       height="14"
+       rx="3"
+       fill="#00ffff"
+       id="rect13"
+       style="fill:#00b4d8" />
+    <!-- Detached left pixel fragment -->
+    <rect
+       x="0"
+       y="35"
+       width="6"
+       height="8"
+       fill="#00ffff"
+       opacity="0.85"
+       id="rect14"
+       style="fill:#00b4d8" />
+    <rect
+       x="94"
+       y="32"
+       width="20"
+       height="14"
+       rx="2"
+       fill="#00ffff"
+       id="rect15"
+       style="fill:#00b4d8" />
+    <!-- BOTTOM LINE -->
+    <rect
+       x="18"
+       y="56"
+       width="72"
+       height="14"
+       rx="3"
+       fill="#00ffff"
+       id="rect16"
+       style="fill:#00b4d8" />
+    <rect
+       x="92"
+       y="58"
+       width="12"
+       height="10"
+       fill="#00ffff"
+       opacity="0.8"
+       id="rect17"
+       style="fill:#00b4d8" />
+    <!-- Vertical glitch tear artifact -->
+    <rect
+       x="108"
+       y="54"
+       width="4"
+       height="18"
+       fill="#ff007f"
+       id="rect18"
+       style="fill:#8b266e" />
+  </g>
+</svg>

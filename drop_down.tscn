@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://srntnqprdk5g"]
+
+[ext_resource type="Script" uid="uid://d07sb4qgi3u4e" path="res://drop_down.gd" id="1_6agol"]
+[ext_resource type="Texture2D" uid="uid://c86vqfo8366i7" path="res://assets/menu-button-icon.svg" id="2_88tru"]
+[ext_resource type="Texture2D" uid="uid://bmmk6n3utxo71" path="res://assets/menu-background.svg" id="3_e3s1v"]
+[ext_resource type="Texture2D" uid="uid://bs7hrusu506an" path="res://assets/menu-menu-button.svg" id="4_e3s1v"]
+[ext_resource type="Texture2D" uid="uid://d0cfag01e3tlr" path="res://assets/menu-settings-button.svg" id="5_34e4r"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1427811714]
+script = ExtResource("1_6agol")
+
+[node name="TopBtn" type="TextureButton" parent="." unique_id=1354453771]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.002
+anchor_right = 0.017
+anchor_bottom = 0.002
+offset_left = -19.640003
+offset_top = 16.84
+offset_right = 87.06503
+offset_bottom = 119.84
+texture_normal = ExtResource("2_88tru")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TopBtn" unique_id=1875128860]
+visible = false
+layout_mode = 0
+offset_left = 106.0
+offset_top = 1.0
+offset_right = 334.0
+offset_bottom = 257.0
+texture = ExtResource("3_e3s1v")
+
+[node name="ExitBtn" type="TextureButton" parent="TopBtn" unique_id=415281832]
+visible = false
+layout_mode = 0
+offset_left = 124.0
+offset_top = 24.0
+offset_right = 316.0
+offset_bottom = 216.0
+texture_normal = ExtResource("4_e3s1v")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="TopBtn" unique_id=950070692]
+visible = false
+layout_mode = 0
+offset_left = 124.0
+offset_top = 131.0
+offset_right = 316.0
+offset_bottom = 227.0
+texture_normal = ExtResource("5_34e4r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TopBtn" to="." method="_on_top_btn_pressed"]
+[connection signal="pressed" from="TopBtn/ExitBtn" to="." method="_on_exit_btn_pressed"]

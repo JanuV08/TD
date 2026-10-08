@@ -46,6 +46,3 @@ func waveSpawn() -> void:
 
 func _on_button_pressed() -> void:
 	waveSpawn()
-
-func _on_exitbutton_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")

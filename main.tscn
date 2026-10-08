@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://path_follow_2d.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://konec.tscn" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://o7jxe40fyfxi" path="res://assets/menu-icon.svg" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dtva6cmfdy176" path="res://tile_map.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://label_hp.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://srntnqprdk5g" path="res://drop_down.tscn" id="6_7mycd"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 105, 101, 0, 0, 0, 0, 663, 101, 0, 0, 0, 0, 680, 136, 0, 0, 0, 0, 602, 209, 0, 0, 0, 0, 220, 166, 0, 0, 0, 0, 172, 281, 0, 0, 0, 0, 599, 313, 0, 0, 0, 0, 758, 279, 0, 0, 0, 0, 733, 90)
+"points": PackedVector2Array(0, 0, 0, 0, 9, 395, 0, 0, 0, 0, 801, 394, 0, 0, 0, 0, 795, 9, 0, 0, 0, 0, 1428, 8, 0, 0, 0, 0, 1426, 826)
 }
-point_count = 9
+point_count = 5
 
 [node name="main" type="Node2D" unique_id=1509445311]
 script = ExtResource("1_ig7tw")
@@ -20,12 +21,15 @@ position = Vector2(111, 142)
 curve = SubResource("Curve2D_ig7tw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=536372481]
-position = Vector2(105, 101)
+position = Vector2(9, 395)
+rotation = -0.0012626257
 loop = false
 script = ExtResource("2_h2yge")
 
-[node name="Area2D" parent="." unique_id=385382761 instance=ExtResource("4_1bvp3")]
-position = Vector2(845, 240)
+[node name="PauseMenu" parent="." unique_id=1427811714 instance=ExtResource("6_7mycd")]
+
+[node name="Konec" parent="." unique_id=385382761 instance=ExtResource("4_1bvp3")]
+position = Vector2(1536, 969)
 
 [node name="labelHP" type="Label" parent="." unique_id=59424855]
 offset_left = 466.0
@@ -40,22 +44,20 @@ offset_top = 391.0
 offset_right = 691.0
 offset_bottom = 428.0
 
-[node name="exitButton" type="Button" parent="." unique_id=674061493]
-offset_left = 7.0
-offset_top = 10.0
-offset_right = 79.0
-offset_bottom = 82.0
-icon = ExtResource("5_7mycd")
-
 [node name="GameOverDialog" type="AcceptDialog" parent="." unique_id=625984528]
+oversampling_override = 1.0
 mode = 2
 title = "The End"
+position = Vector2i(0, 36)
 ok_button_text = "MENU"
 dialog_text = "YOU LOST!"
 dialog_close_on_escape = false
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="TileMap" parent="." unique_id=1323716241 instance=ExtResource("5_7mycd")]
+visibility_layer = 2
+z_index = -1
+
+[connection signal="body_entered" from="Konec" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="waveButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="exitButton" to="." method="_on_exitbutton_pressed"]
 [connection signal="canceled" from="GameOverDialog" to="." method="_on_game_over_dialog_canceled"]
 [connection signal="confirmed" from="GameOverDialog" to="." method="_on_game_over_dialog_confirmed"]
