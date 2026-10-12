@@ -1,7 +1,7 @@
 extends Node2D
 
-var enemy_scene: PackedScene = preload("res://enemy.tscn")
-var path_script: Script = preload("res://path_follow_2d.gd")
+var enemy_scene: PackedScene = preload("res://Scenes/enemy.tscn")
+var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
 func _ready() -> void:
 	Global.enemyCount = 0

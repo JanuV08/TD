@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://path_follow_2d.gd" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://konec.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dtva6cmfdy176" path="res://tile_map.tscn" id="5_7mycd"]
-[ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://label_hp.gd" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://srntnqprdk5g" path="res://drop_down.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://Scripts/main.gd" id="1_21xkr"]
+[ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://Scripts/path_follow_2d.gd" id="2_6bp64"]
+[ext_resource type="PackedScene" uid="uid://srntnqprdk5g" path="res://Scenes/drop_down.tscn" id="3_344ge"]
+[ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://Scenes/konec.tscn" id="4_ynf5e"]
+[ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://Scripts/label_hp.gd" id="5_hptm8"]
+[ext_resource type="PackedScene" uid="uid://dtva6cmfdy176" path="res://Scenes/tile_map.tscn" id="6_d1ilt"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -14,7 +14,7 @@ _data = {
 point_count = 5
 
 [node name="main" type="Node2D" unique_id=1509445311]
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_21xkr")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1530383361]
 position = Vector2(111, 142)
@@ -24,11 +24,11 @@ curve = SubResource("Curve2D_ig7tw")
 position = Vector2(9, 395)
 rotation = -0.0012626257
 loop = false
-script = ExtResource("2_h2yge")
+script = ExtResource("2_6bp64")
 
-[node name="PauseMenu" parent="." unique_id=1427811714 instance=ExtResource("6_7mycd")]
+[node name="PauseMenu" parent="." unique_id=1427811714 instance=ExtResource("3_344ge")]
 
-[node name="Konec" parent="." unique_id=385382761 instance=ExtResource("4_1bvp3")]
+[node name="Konec" parent="." unique_id=385382761 instance=ExtResource("4_ynf5e")]
 position = Vector2(1536, 969)
 
 [node name="labelHP" type="Label" parent="." unique_id=59424855]
@@ -36,7 +36,7 @@ offset_left = 466.0
 offset_top = 379.0
 offset_right = 554.0
 offset_bottom = 403.0
-script = ExtResource("5_lquwl")
+script = ExtResource("5_hptm8")
 
 [node name="waveButton" type="Button" parent="." unique_id=1777386107]
 offset_left = 654.0
@@ -53,7 +53,7 @@ ok_button_text = "MENU"
 dialog_text = "YOU LOST!"
 dialog_close_on_escape = false
 
-[node name="TileMap" parent="." unique_id=1323716241 instance=ExtResource("5_7mycd")]
+[node name="TileMap" parent="." unique_id=1323716241 instance=ExtResource("6_d1ilt")]
 visibility_layer = 2
 z_index = -1
 
