@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://Scripts/main.gd" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://Scripts/path_follow_2d.gd" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://cmk0txpqns3dx" path="res://Scripts/enemy_data.gd" id="2_344ge"]
 [ext_resource type="PackedScene" uid="uid://srntnqprdk5g" path="res://Scenes/drop_down.tscn" id="3_344ge"]
-[ext_resource type="Resource" uid="uid://b3e1p1n3fjfmg" path="res://assets/Enemy/basic_mob.tres" id="3_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://Scenes/konec.tscn" id="4_ynf5e"]
 [ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://Scripts/label_hp.gd" id="5_hptm8"]
 [ext_resource type="PackedScene" uid="uid://dtva6cmfdy176" path="res://Scenes/tile_map.tscn" id="6_d1ilt"]
@@ -17,7 +15,6 @@ point_count = 5
 
 [node name="main" type="Node2D" unique_id=1509445311]
 script = ExtResource("1_21xkr")
-enemy_types = Array[ExtResource("2_344ge")]([ExtResource("3_ynf5e")])
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1530383361]
 position = Vector2(111, 142)
