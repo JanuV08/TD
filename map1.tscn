@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c662fvhooagka"]
+
+[ext_resource type="Script" uid="uid://d1kl42aasr1ty" path="res://map_1.gd" id="1_p84jh"]
+
+[node name="Control" type="Control" unique_id=363545599]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p84jh")
+
+[node name="Level1" type="Button" parent="." unique_id=1217715305]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 289.0
+offset_right = 500.0
+offset_bottom = 433.0
+
+[node name="Button2" type="Button" parent="." unique_id=225034791]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 289.0
+offset_right = 759.0
+offset_bottom = 433.0
+
+[node name="Button3" type="Button" parent="." unique_id=1518989396]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 289.0
+offset_right = 1021.0
+offset_bottom = 433.0
+
+[node name="Button4" type="Button" parent="." unique_id=894661780]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = 295.0
+offset_right = 1270.0
+offset_bottom = 439.0
+
+[node name="Button5" type="Button" parent="." unique_id=873553795]
+layout_mode = 0
+offset_left = 1379.0
+offset_top = 295.0
+offset_right = 1523.0
+offset_bottom = 439.0
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]

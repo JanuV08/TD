@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://srntnqprdk5g"]
 
 [ext_resource type="Script" uid="uid://d07sb4qgi3u4e" path="res://Scripts/drop_down.gd" id="1_6agol"]
-[ext_resource type="Texture2D" uid="uid://c86vqfo8366i7" path="res://assets/menu-button-icon.svg" id="2_88tru"]
-[ext_resource type="Texture2D" uid="uid://bmmk6n3utxo71" path="res://assets/menu-background.svg" id="3_e3s1v"]
-[ext_resource type="Texture2D" uid="uid://bs7hrusu506an" path="res://assets/menu-menu-button.svg" id="4_e3s1v"]
-[ext_resource type="Texture2D" uid="uid://d0cfag01e3tlr" path="res://assets/menu-settings-button.svg" id="5_34e4r"]
+[ext_resource type="Texture2D" uid="uid://cowej1ujofcqj" path="res://assets/GUI/menu-button-icon.png" id="2_y7fiv"]
+[ext_resource type="Texture2D" uid="uid://l7yv7v4oq7t6" path="res://assets/GUI/menu-background.png" id="3_y7fiv"]
+[ext_resource type="Texture2D" uid="uid://4lhxnsiheubk" path="res://assets/GUI/menu-quit-button.png" id="4_y7fiv"]
+[ext_resource type="Texture2D" uid="uid://lq2ybipucl2r" path="res://assets/GUI/menu-settings-button.png" id="5_85cpj"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1427811714]
 script = ExtResource("1_6agol")
@@ -17,42 +17,34 @@ anchor_right = 0.017
 anchor_bottom = 0.002
 offset_left = -19.640003
 offset_top = 16.84
-offset_right = 87.06503
-offset_bottom = 119.84
-texture_normal = ExtResource("2_88tru")
+offset_right = 47.698124
+offset_bottom = 81.84
+texture_normal = ExtResource("2_y7fiv")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="TopBtn" unique_id=1875128860]
-visible = false
 layout_mode = 0
-offset_left = 106.0
-offset_top = 1.0
-offset_right = 334.0
-offset_bottom = 257.0
-texture = ExtResource("3_e3s1v")
+offset_left = 67.0
+offset_right = 225.0
+offset_bottom = 256.0
+texture = ExtResource("3_y7fiv")
 
 [node name="ExitBtn" type="TextureButton" parent="TopBtn" unique_id=415281832]
-visible = false
 layout_mode = 0
-offset_left = 124.0
-offset_top = 24.0
-offset_right = 316.0
-offset_bottom = 216.0
-texture_normal = ExtResource("4_e3s1v")
-ignore_texture_size = true
-stretch_mode = 0
+offset_left = 82.0
+offset_top = 95.0
+offset_right = 210.0
+offset_bottom = 159.0
+texture_normal = ExtResource("4_y7fiv")
 
 [node name="TextureButton" type="TextureButton" parent="TopBtn" unique_id=950070692]
-visible = false
 layout_mode = 0
-offset_left = 124.0
-offset_top = 131.0
-offset_right = 316.0
-offset_bottom = 227.0
-texture_normal = ExtResource("5_34e4r")
-ignore_texture_size = true
-stretch_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 209.0
+offset_bottom = 78.0
+texture_normal = ExtResource("5_85cpj")
 
 [connection signal="pressed" from="TopBtn" to="." method="_on_top_btn_pressed"]
 [connection signal="pressed" from="TopBtn/ExitBtn" to="." method="_on_exit_btn_pressed"]

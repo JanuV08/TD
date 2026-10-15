@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs7hrusu506an"
-path="res://.godot/imported/menu-menu-button.svg-d657b649b6ba8f3f809f4f9612bbb825.ctex"
+uid="uid://4lhxnsiheubk"
+path="res://.godot/imported/menu-quit-button.png-198704ddb9b6a5026c58133a13022a52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu-menu-button.svg"
-dest_files=["res://.godot/imported/menu-menu-button.svg-d657b649b6ba8f3f809f4f9612bbb825.ctex"]
+source_file="res://assets/GUI/menu-quit-button.png"
+dest_files=["res://.godot/imported/menu-quit-button.png-198704ddb9b6a5026c58133a13022a52.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
