@@ -116,7 +116,16 @@ script = ExtResource("1_1f0kj")
 shape = SubResource("CircleShape2D_yhj6x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1626173769]
-position = Vector2(-1.5258789e-05, 0)
-scale = Vector2(2.34375, 2.125)
+position = Vector2(-1.5258789e-05, 3.3000002)
+scale = Vector2(2.2, 2.2)
 sprite_frames = SubResource("SpriteFrames_ujabj")
 animation = &"walk_side"
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=1536395267]
+offset_left = -34.0
+offset_top = -70.0
+offset_right = 34.0
+offset_bottom = -60.0
+max_value = 20.0
+fill_mode = 1
+show_percentage = false

@@ -11,24 +11,24 @@ var speed: float
 var gold_reward: int
 var enemy_name: String
 
-func setup(data: EnemyData) -> void:
-	enemy_name = data.name
-	max_health = data.max_health
-	current_health = data.max_health
-	speed = data.speed
-	gold_reward = data.gold_reward
-	
-	if data.sprite_frames:
-		animated_sprite.sprite_frames = data.sprite_frames
-		#nimated_sprite.play("walk")
-
+@export var max_hp: int = 20
+var current_hp: int
+@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
 	last_position = global_position
-	print("Spawned enemy: ", enemy_name, " | HP: ", max_health, " | Speed: ", speed)
+	current_hp = max_hp
+	health_bar.max_value = max_hp
+	health_bar.value = current_hp 
 
 func _process(_delta: float) -> void:
-	# Safety check before updating
+	
+	current_hp -= 1
+	health_bar.value = current_health
+	if current_hp <= 0:
+		queue_free()
+		Global.enemyCount -=1
+	
 	if not is_instance_valid(animated_sprite):
 		return
 
