@@ -24,6 +24,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="TopBtn" unique_id=1875128860]
+visible = false
 layout_mode = 0
 offset_left = 67.0
 offset_right = 225.0
@@ -31,6 +32,7 @@ offset_bottom = 256.0
 texture = ExtResource("3_y7fiv")
 
 [node name="ExitBtn" type="TextureButton" parent="TopBtn" unique_id=415281832]
+visible = false
 layout_mode = 0
 offset_left = 82.0
 offset_top = 95.0
@@ -39,6 +41,7 @@ offset_bottom = 159.0
 texture_normal = ExtResource("4_y7fiv")
 
 [node name="TextureButton" type="TextureButton" parent="TopBtn" unique_id=950070692]
+visible = false
 layout_mode = 0
 offset_left = 81.0
 offset_top = 14.0
