@@ -4,13 +4,8 @@ var enemy_scene: PackedScene = preload("res://Scenes/enemy.tscn")
 var enemyLVL2_scene: PackedScene = preload("res://Scenes/enemyLVL2.tscn")
 var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
-
 func _ready() -> void:
 	Global.enemyCount = 0
-
-func _process(_delta: float) -> void:
-	$waveButton.disabled = (Global.enemyCount > 0)
-
 
 func spawn() -> void:
 	Global.enemyCount+=1
@@ -36,18 +31,30 @@ func spawnLVL2() -> void:
 	new_path_follow.add_child(new_enemy)
 	path2d.add_child(new_path_follow)
 
-func waveSpawn() -> void:
-	match Global.wave:
+func levelSpawn() -> void:
+	match Global.level:
 		1: 
-			for i in range(20):
+			Global.enemiesSpawned = 5
+			for i in range(2):
 				spawn()
 				await get_tree().create_timer(0.5).timeout
-		2:
+			await get_tree().create_timer(3.0).timeout
 			for i in range(2):
 				spawn()
 				await get_tree().create_timer(0.5).timeout
 			spawnLVL2()
+		2:
+			spawn()
+			await get_tree().create_timer(0.5).timeout
+			spawnLVL2()
+			await get_tree().create_timer(3.0).timeout
+			spawn()
+			await get_tree().create_timer(0.5).timeout
+			spawn()
+			await get_tree().create_timer(0.5).timeout
+			spawnLVL2()
 			
 
 func _on_button_pressed() -> void:
-	waveSpawn()
+	levelSpawn() 
+	$waveButton.disabled = true

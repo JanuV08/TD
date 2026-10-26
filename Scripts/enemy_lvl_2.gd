@@ -6,7 +6,7 @@ extends Node2D
 var last_position: Vector2 = Vector2.ZERO
 
 @export var damage_to_base : int = 10
-@export var enemy_type: String = "lv2"
+@export var enemy_type: String = "lvl2"
 
 var current_hp: int
 @export var max_hp: int = 10

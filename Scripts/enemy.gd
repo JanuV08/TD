@@ -5,6 +5,9 @@ extends Node2D
 
 var last_position: Vector2 = Vector2.ZERO
 
+@export var damage_to_base : int = 5
+@export var enemy_type: String = "lvl1"
+
 @export var max_hp: int = 20
 var current_hp: int
 @onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar

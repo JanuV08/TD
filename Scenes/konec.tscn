@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://b0xog2jy3oe6k"]
 
+[ext_resource type="Script" uid="uid://iksrqt6lyl6x" path="res://Scripts/konec.gd" id="1_e83gx"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(48, 18)
 
 [node name="End" type="Area2D" unique_id=385382761]
+script = ExtResource("1_e83gx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108487566]
 shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="GameOverDialog" type="AcceptDialog" parent="." unique_id=1615410561]
+oversampling_override = 1.0
+mode = 2
+title = "The End"
+position = Vector2i(0, 36)
+ok_button_text = "MENU"
+dialog_text = "YOU LOST!"
+dialog_close_on_escape = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="canceled" from="GameOverDialog" to="." method="_on_game_over_dialog_canceled"]
+[connection signal="confirmed" from="GameOverDialog" to="." method="_on_game_over_dialog_confirmed"]
