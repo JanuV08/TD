@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var viewport_size: Vector2 = get_viewport_rect().size
+
 func _on_game_over_dialog_confirmed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
@@ -9,15 +11,13 @@ func _on_game_over_dialog_canceled() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _process(_delta: float) -> void:
-	if Global.health == 0:
-		$GameOverDialog.popup_centered()
-		$GameOverDialog.visible = true
-		Global.lvl1Completed = false
-	
-	elif Global.enemiesKilled == Global.enemiesSpawned && Global.health != 0:
-		$GameOverDialog.popup_centered()
-		$GameOverDialog.visible = true
-		Global.lvl1Completed = true
+	if Global.enemiesKilled == Global.enemiesSpawned && Global.health != 0:
+		Global.levelWon = true
+		if Global.level	== 1:
+			Global.lvl1Completed = true
+		if Global.level == 2:
+			Global.lvl2Completed = true
+		$CanvasLayer/end_menu.visible = true
 
 
 func _on_body_entered(body: Node2D) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2tleklc1ll1"
-path="res://.godot/imported/level-select-1-idle.png-779df6e3c5127cff0296f2bd11c32de5.ctex"
+uid="uid://dgvfy8po0oxsy"
+path="res://.godot/imported/level-select-2-completed.png-99a993f14185f5b3412ce089e522b3ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GUI/level-select-1-idle.png"
-dest_files=["res://.godot/imported/level-select-1-idle.png-779df6e3c5127cff0296f2bd11c32de5.ctex"]
+source_file="res://assets/GUI/levelSelect/level-select-2-completed.png"
+dest_files=["res://.godot/imported/level-select-2-completed.png-99a993f14185f5b3412ce089e522b3ee.ctex"]
 
 [params]
 

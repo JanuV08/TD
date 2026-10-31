@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://c662fvhooagka"]
 
 [ext_resource type="Script" uid="uid://d1kl42aasr1ty" path="res://Scripts/map_1.gd" id="1_4pqaf"]
-[ext_resource type="Texture2D" uid="uid://bq2tleklc1ll1" path="res://assets/GUI/level-select-1-idle.png" id="2_d3x0h"]
-[ext_resource type="Texture2D" uid="uid://dv0166evar15t" path="res://assets/GUI/level-select-1-hover.png" id="3_xgpx1"]
-[ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/level-select-1-completed.png" id="4_xgpx1"]
+[ext_resource type="Texture2D" uid="uid://bq2tleklc1ll1" path="res://assets/GUI/levelSelect/level-select-1-idle.png" id="2_d3x0h"]
+[ext_resource type="Texture2D" uid="uid://dv0166evar15t" path="res://assets/GUI/levelSelect/level-select-1-hover.png" id="3_xgpx1"]
+[ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/levelSelect/level-select-1-completed.png" id="4_xgpx1"]
+[ext_resource type="Texture2D" uid="uid://buxh50tjhgt2x" path="res://assets/GUI/levelSelect/level-select-2-idle.png" id="5_73eik"]
+[ext_resource type="Texture2D" uid="uid://b6a0unp343s3n" path="res://assets/GUI/levelSelect/level-select-2-hover.png" id="6_wouuh"]
+[ext_resource type="Texture2D" uid="uid://dgvfy8po0oxsy" path="res://assets/GUI/levelSelect/level-select-2-completed.png" id="7_jemul"]
 
 [node name="Control" type="Control" unique_id=363545599]
 layout_mode = 3
@@ -26,12 +29,17 @@ texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="lvl2Btn" type="Button" parent="." unique_id=225034791]
+[node name="lvl2Btn" type="TextureButton" parent="." unique_id=934986800]
 layout_mode = 0
 offset_left = 615.0
 offset_top = 289.0
 offset_right = 759.0
 offset_bottom = 433.0
+texture_normal = ExtResource("5_73eik")
+texture_hover = ExtResource("6_wouuh")
+texture_disabled = ExtResource("7_jemul")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button3" type="Button" parent="." unique_id=1518989396]
 layout_mode = 0

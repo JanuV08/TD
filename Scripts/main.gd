@@ -4,6 +4,8 @@ var enemy_scene: PackedScene = preload("res://Scenes/enemy.tscn")
 var enemyLVL2_scene: PackedScene = preload("res://Scenes/enemyLVL2.tscn")
 var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
+
+
 func _ready() -> void:
 	Global.enemyCount = 0
 
@@ -44,6 +46,7 @@ func levelSpawn() -> void:
 				await get_tree().create_timer(0.5).timeout
 			spawnLVL2()
 		2:
+			Global.enemiesSpawned = 5
 			spawn()
 			await get_tree().create_timer(0.5).timeout
 			spawnLVL2()

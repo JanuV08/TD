@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1lorpqrsu25w"
-path="res://.godot/imported/main-menu-quit-button-idle.png-716f317bc1afcdfdad2bd90210a0ebcb.ctex"
+uid="uid://b25043mo0xnnv"
+path="res://.godot/imported/end-menu-background.png-9786f8a7a7a108d0ac091087e834052b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GUI/main-menu-quit-button-idle.png"
-dest_files=["res://.godot/imported/main-menu-quit-button-idle.png-716f317bc1afcdfdad2bd90210a0ebcb.ctex"]
+source_file="res://assets/GUI/endMenu/end-menu-background.png"
+dest_files=["res://.godot/imported/end-menu-background.png-9786f8a7a7a108d0ac091087e834052b.ctex"]
 
 [params]
 

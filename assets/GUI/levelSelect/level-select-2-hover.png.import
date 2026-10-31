@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1r6mropg38v"
-path="res://.godot/imported/main-menu-start-button-idle.png-46c0e91983050ba8646c4b073768e552.ctex"
+uid="uid://b6a0unp343s3n"
+path="res://.godot/imported/level-select-2-hover.png-2f225a150afb791d829cf07fc80248c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GUI/main-menu-start-button-idle.png"
-dest_files=["res://.godot/imported/main-menu-start-button-idle.png-46c0e91983050ba8646c4b073768e552.ctex"]
+source_file="res://assets/GUI/levelSelect/level-select-2-hover.png"
+dest_files=["res://.godot/imported/level-select-2-hover.png-2f225a150afb791d829cf07fc80248c5.ctex"]
 
 [params]
 
