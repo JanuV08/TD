@@ -1,21 +1,17 @@
 extends CanvasLayer
 
 @onready var top_btn: TextureButton = $TopBtn
-@onready var exit_btn: TextureButton = $TopBtn/TextureRect/ExitBtn
-@onready var settings_btn: TextureButton = $TopBtn/TextureRect/SettBtn
-@onready var background: TextureRect = $TopBtn/TextureRect
+@onready var exit_btn: TextureButton = $TextureRect/ExitBtn
+@onready var settings_btn: TextureButton = $TextureRect/SettBtn
+@onready var background: TextureRect = $TextureRect
 
 func _on_top_btn_pressed() -> void:
 	background.visible = !background.visible
-	exit_btn.visible = !exit_btn.visible
-	settings_btn.visible = !settings_btn.visible
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		background.visible = !background.visible
-		exit_btn.visible = !exit_btn.visible
-		settings_btn.visible = !settings_btn.visible
-		
+
 func _ready() -> void:
 	exit_btn.pivot_offset = exit_btn.size / 2
 	settings_btn.pivot_offset = settings_btn.size / 2

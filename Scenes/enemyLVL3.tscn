@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://uv3w4hriw3s8"]
+
+[ext_resource type="Script" uid="uid://tv7h2dpru12m" path="res://Scripts/enemy_lvl_3.gd" id="1_ulxxd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
+radius = 64.00781
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gybor"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66myw"]
+bg_color = Color(0.662597, 0.058615543, 3.3691526e-07, 1)
+
+[node name="enemyLVL3" type="Node2D" unique_id=1052535092]
+script = ExtResource("1_ulxxd")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2042928617]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=487125166]
+shape = SubResource("CircleShape2D_he84e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1000586283]
+sprite_frames = SubResource("SpriteFrames_gybor")
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=532606999]
+anchors_preset = -1
+anchor_right = 0.0062499046
+anchor_bottom = 0.0009191036
+offset_left = -33.0
+offset_top = -93.0
+offset_right = 35.0
+offset_bottom = -83.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_66myw")
+step = 1.0
+rounded = true
+show_percentage = false
+metadata/_edit_use_anchors_ = true

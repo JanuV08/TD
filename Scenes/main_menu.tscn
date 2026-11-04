@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbqvbkh1q8p0h" path="res://Scripts/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://bm46k4t65rihx" path="res://assets/GUI/mainMenu/main-menu-button-idle.png" id="2_opfnp"]
-[ext_resource type="Texture2D" uid="uid://c5vdhbd2hn2ry" path="res://assets/GUI/main-menu-start-button-hover.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dalkf88x0h0k7" path="res://assets/GUI/mainMenu/main-menu-button-hover.png" id="3_ce3w2"]
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="4_opfnp"]
 
 [node name="MainMenu" type="Control" unique_id=1862327775]
@@ -14,6 +14,7 @@ offset_top = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_06t4h")
 
 [node name="playBtn" type="TextureButton" parent="." unique_id=1705031711]

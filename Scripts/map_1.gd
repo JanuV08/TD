@@ -17,29 +17,25 @@ func _ready() -> void:
 
 #Button for level 1
 func _on_lvl_1_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	Global.level = 1
 	Global.enemiesSpawned = 5
 	Global.enemiesKilled = 0
 	Global.health = 100
-
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_1_btn_mouse_entered() -> void:
 	lvl1Btn.scale = Vector2(1.1,1.1)
-
 func _on_lvl_1_btn_mouse_exited() -> void:
 	lvl1Btn.scale = Vector2(1.0,1.0)
 
 
 #Button for level2
 func _on_lvl_2_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	Global.level = 2
 	Global.enemiesSpawned = 5
 	Global.enemiesKilled = 0
 	Global.health = 30
-
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_2_btn_mouse_entered() -> void:
 	lvl2Btn.scale = Vector2(1.1,1.1)
-
 func _on_lvl_2_btn_mouse_exited() -> void:
 	lvl2Btn.scale = Vector2(1.0,1.0)

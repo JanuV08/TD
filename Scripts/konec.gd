@@ -1,24 +1,24 @@
 extends Area2D
 
-@onready var viewport_size: Vector2 = get_viewport_rect().size
-
-func _on_game_over_dialog_confirmed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-
-func _on_game_over_dialog_canceled() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-
 func _process(_delta: float) -> void:
-	if Global.enemiesKilled == Global.enemiesSpawned && Global.health != 0:
+	if Global.nextBtnPressed == true:
+		$CanvasLayer.visible = false
+
+	if Global.enemiesSpawned > 0 and Global.enemiesKilled == Global.enemiesSpawned and Global.health > 0:
 		Global.levelWon = true
-		if Global.level	== 1:
+		if Global.level == 1:
 			Global.lvl1Completed = true
 		if Global.level == 2:
 			Global.lvl2Completed = true
-		$CanvasLayer/end_menu.visible = true
-
+		$CanvasLayer.visible = true
+	
+	if Global.health <= 0:
+		Global.levelWon = false
+		if Global.level == 1:
+			Global.lvl1Completed = false
+		if Global.level == 2:
+			Global.lvl2Completed = false
+		$CanvasLayer.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
 	var enemy = body if "enemy_type" in body else body.get_parent()
