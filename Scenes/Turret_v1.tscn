@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://v3ugdskuxdyr"]
+
+[ext_resource type="Script" uid="uid://bj7uem2c5kjr7" path="res://Scripts/turret_v1.gd" id="1_uilvw"]
+[ext_resource type="Texture2D" uid="uid://d0kwbcwmqfw8g" path="res://assets/Turrets/turret_bottom.png" id="2_3bye5"]
+[ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="3_m01ja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gviv"]
+radius = 120.0
+
+[node name="TurretV1" type="Node2D" unique_id=1074404112]
+position = Vector2(1141, 644)
+script = ExtResource("1_uilvw")
+
+[node name="Podstavec_turrety" type="Sprite2D" parent="." unique_id=1790137673]
+texture = ExtResource("2_3bye5")
+
+[node name="vez_turrety" type="Sprite2D" parent="." unique_id=772436437]
+position = Vector2(-9.536743e-07, 1.1920929e-07)
+rotation = 1.5707964
+scale = Vector2(1.4609374, 1.4609374)
+texture = ExtResource("3_m01ja")
+centered = false
+offset = Vector2(-25, -16)
+
+[node name="Marker2D" type="Marker2D" parent="vez_turrety" unique_id=136591722]
+position = Vector2(-19.850267, 3.372835e-07)
+
+[node name="range_Area2D" type="Area2D" parent="." unique_id=156589357]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range_Area2D" unique_id=1245016613]
+shape = SubResource("CircleShape2D_5gviv")
+
+[connection signal="body_entered" from="range_Area2D" to="." method="_on_range_area_2d_body_entered"]
+[connection signal="body_exited" from="range_Area2D" to="." method="_on_range_area_2d_body_exited"]

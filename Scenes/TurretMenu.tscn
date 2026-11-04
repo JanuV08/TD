@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://brlgxlp1quekj"]
+
+[ext_resource type="Script" uid="uid://c5h7g5388nwgf" path="res://Scripts/turret_menu.gd" id="1_u5dek"]
+[ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="2_jfwhd"]
+
+[node name="TurretMenu" type="Control" unique_id=1637748730]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u5dek")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1889112696]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 32.0
+texture_normal = ExtResource("2_jfwhd")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=319614464]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 6.0
+offset_right = 260.0
+offset_bottom = 29.0
+text = "kanon - 100 niga"
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=6398421]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 233.0
+offset_bottom = 104.0
+texture_normal = ExtResource("2_jfwhd")
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=1498376992]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 233.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_jfwhd")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_button_3_pressed"]
