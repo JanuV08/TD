@@ -1,44 +1,25 @@
-class_name Enemy
+class_name EnemyLVL3
 extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
-@onready var health_bar = $CharacterBody2D/ProgressBar
 
 var last_position: Vector2 = Vector2.ZERO
 
-var max_health: int
-var current_health: int
-var speed: float
-var gold_reward: int
-var enemy_name: String
+@export var damage_to_base : int = 15
+@export var enemy_type: String = "lvl3"
 
-# Setter: Kdykoliv se hp změní, automaticky se upraví i hodnota lišty
-var hp: int = max_health:
-	set(value):
-		hp = value
-		if health_bar:
-			health_bar.value = hp
-			
-func setup(data: EnemyData) -> void:
-	enemy_name = data.name
-	max_health = data.max_health
-	current_health = data.max_health
-	speed = data.speed
-	gold_reward = data.gold_reward
-	
-	if data.sprite_frames:
-		animated_sprite.sprite_frames = data.sprite_frames
-		#nimated_sprite.play("walk")
-
+var current_hp: int
+@export var max_hp: int = 10
+@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
 	last_position = global_position
-	print("Spawned enemy: ", enemy_name, " | HP: ", max_health, " | Speed: ", speed)
-	health_bar.max_value = max_health
-	health_bar.value = hp
+	last_position = global_position
+	current_hp = max_hp
+	health_bar.max_value = max_hp
+	health_bar.value = current_hp 
 
 func _process(_delta: float) -> void:
-	# Safety check before updating
 	if not is_instance_valid(animated_sprite):
 		return
 
