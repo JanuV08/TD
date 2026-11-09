@@ -1,7 +1,8 @@
 extends Node2D
 
-var enemyLVL1_scene: PackedScene = preload("res://Scenes/enemy.tscn")
+var enemyLVL1_scene: PackedScene = preload("res://Scenes/enemyLVL1.tscn")
 var enemyLVL2_scene: PackedScene = preload("res://Scenes/enemyLVL2.tscn")
+var enemyLVL3_scene: PackedScene = preload("res://Scenes/enemyLVL3.tscn")
 var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
 func _process(_delta: float) -> void:
@@ -57,6 +58,8 @@ func levelSpawn() -> void:
 			spawn(enemyLVL2_scene)
 			await wait(0.5)
 			spawn(enemyLVL2_scene)
+			await wait(0.5)
+			spawn(enemyLVL3_scene)
 			
 
 func _on_button_pressed() -> void:
