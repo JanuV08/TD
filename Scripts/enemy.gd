@@ -2,6 +2,7 @@ class_name Enemy
 extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var health_bar = $CharacterBody2D/ProgressBar
 
 var last_position: Vector2 = Vector2.ZERO
 
@@ -11,6 +12,13 @@ var speed: float
 var gold_reward: int
 var enemy_name: String
 
+# Setter: Kdykoliv se hp změní, automaticky se upraví i hodnota lišty
+var hp: int = max_health:
+	set(value):
+		hp = value
+		if health_bar:
+			health_bar.value = hp
+			
 func setup(data: EnemyData) -> void:
 	enemy_name = data.name
 	max_health = data.max_health
@@ -26,6 +34,8 @@ func setup(data: EnemyData) -> void:
 func _ready() -> void:
 	last_position = global_position
 	print("Spawned enemy: ", enemy_name, " | HP: ", max_health, " | Speed: ", speed)
+	health_bar.max_value = max_health
+	health_bar.value = hp
 
 func _process(_delta: float) -> void:
 	# Safety check before updating
