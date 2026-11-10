@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5h7g5388nwgf" path="res://Scripts/turret_menu.gd" id="1_u5dek"]
 [ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="2_jfwhd"]
+[ext_resource type="Texture2D" uid="uid://f75rim8oli7i" path="res://assets/Turrets/turret_tesla.png" id="3_1e11k"]
 
 [node name="TurretMenu" type="Control" unique_id=1637748730]
 z_index = 5
@@ -28,7 +29,7 @@ layout_mode = 0
 offset_top = 72.0
 offset_right = 233.0
 offset_bottom = 104.0
-texture_normal = ExtResource("2_jfwhd")
+texture_normal = ExtResource("3_1e11k")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1498376992]
 layout_mode = 0

@@ -3,7 +3,8 @@ extends Area2D
 var is_occupied = false
 var current_turret = null
 
-@export var turret_scene: PackedScene = preload("res://Scenes/Turret_v1.tscn")
+@export var turret_cannon_scene: PackedScene = preload("res://Scenes/Turret_cannon.tscn")
+@export var turret_tesla_scene: PackedScene = preload("res://Scenes/Turret_tesla.tscn")
 @export var selection_menu_scene: PackedScene = preload("res://Scenes/TurretMenu.tscn")
 
 var selection_menu_instance = null
@@ -39,10 +40,15 @@ func _on_turret_selected(turret_type: int):
 
 func spawn_turret(turret_type: int):
 	is_occupied = true
-	
-	var turret = turret_scene.instantiate()
-	turret.global_position = global_position
-	get_tree().current_scene.add_child(turret)
-	current_turret = turret
-	
+	if turret_type == 1:
+		var turret = turret_cannon_scene.instantiate()
+		turret.global_position = global_position
+		get_tree().current_scene.add_child(turret)
+		current_turret = turret
+	if turret_type == 2:
+		var turret = turret_tesla_scene.instantiate()
+		turret.global_position = global_position
+		get_tree().current_scene.add_child(turret)
+		current_turret = turret
+		
 	$AnimatedSprite2D.play("occupied")
