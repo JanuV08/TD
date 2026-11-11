@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgb8nttvy6i6i"]
 
-[ext_resource type="Script" uid="uid://cmve8qatlicsf" path="res://Scripts/area_2d.gd" id="1_ahiqj"]
+[ext_resource type="Script" uid="uid://cmve8qatlicsf" path="res://Scripts/turret_selection.gd" id="1_ahiqj"]
 [ext_resource type="Texture2D" uid="uid://bxtruhn3p7c3e" path="res://assets/Turrets/placeblock.png" id="2_7ro8f"]
 [ext_resource type="Texture2D" uid="uid://b8ai7rnufbrr6" path="res://assets/Turrets/placeblock_hover.png" id="3_0shpp"]
 [ext_resource type="Texture2D" uid="uid://bn7v1fmgiex42" path="res://assets/Turrets/placeblock_placed.png" id="4_t4xbs"]
@@ -83,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahiqj"]
-size = Vector2(32, 32)
+size = Vector2(68, 68)
 
 [node name="BuildingSlot" type="Node2D" unique_id=432147401]
 
@@ -92,6 +92,7 @@ script = ExtResource("1_ahiqj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=612949822]
 texture_filter = 1
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3e2se")
 animation = &"occupied"
 

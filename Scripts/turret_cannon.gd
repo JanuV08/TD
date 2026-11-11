@@ -1,36 +1,64 @@
 extends Node2D
 
-var target = null # Ukládáme si aktuálního nepřítele
+@onready var damage_timer: Timer = $DamageTimer
 
-func _process(_delta):
-	# 1. Pokud máme cíl a stále žije
+var target: Node2D = null
+@export var damage_amount: int = 5
+@export var cost: int = 100
+
+func _get_enemy_node(body: Node2D) -> Node2D:
+	if body == null:
+		return null
+	if body.has_method("take_damage") or "current_hp" in body:
+		return body
+	if body.get_parent() != null and (body.get_parent().has_method("take_damage") or "current_hp" in body.get_parent()):
+		return body.get_parent()
+	return null
+
+func _process(_delta: float) -> void:
 	if is_instance_valid(target):
-		# Hlaveň se plynule otočí směrem k nepříteli
 		$vez_turrety.look_at(target.global_position)
-		
-		# Kdyby se hlaveň točila zadem, odkomentuj tenhle řádek:
-		# $vez_turrety.rotation += deg_to_rad(180)
+		$vez_turrety.rotation += deg_to_rad(180)
 	else:
-		# Pokud cíl není, zkusíme najít nového
 		find_target()
 
-func find_target():
-	# Získáme všechny objekty, které vstoupily do dosahu Area2D
+func find_target() -> void:
 	var overlapping_bodies = $range_Area2D.get_overlapping_bodies()
 	
-	if overlapping_bodies.size() > 0:
-		# Vezmeme prvního nalezeného nepřítele
-		target = overlapping_bodies[0]
+	target = null
+	for body in overlapping_bodies:
+		var enemy = _get_enemy_node(body)
+		if enemy != null:
+			target = enemy
+			break
+			
+	if target != null:
+		if damage_timer.is_stopped():
+			damage_timer.start()
 	else:
-		target = null
+		damage_timer.stop()
 
-# Signál: Jakmile nepřítel vstoupí do kruhu dosahu (název opraven podle RangeArea2D)
 func _on_range_area_2d_body_entered(body: Node2D) -> void:
-	if target == null:
-		target = body
+	var enemy = _get_enemy_node(body)
+	if enemy != null:
+		if target == null:
+			target = enemy
+			if damage_timer.is_stopped():
+				damage_timer.start()
 
-# Signál: Jakmile nepřítel z kruhu odejde (název opraven podle RangeArea2D)
 func _on_range_area_2d_body_exited(body: Node2D) -> void:
-	if body == target:
+	var enemy = _get_enemy_node(body)
+	if enemy == target or body == target:
 		target = null
-		find_target() # Zkusíme najít jiného, pokud tam ještě někdo je
+		find_target()
+
+func _on_damage_timer_timeout() -> void:
+	if is_instance_valid(target):
+		if target.has_method("take_damage"):
+			target.take_damage(damage_amount)
+		elif "current_hp" in target:
+			target.current_hp -= damage_amount
+			if target.current_hp <= 0:
+				target.queue_free()
+	else:
+		find_target()

@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://bn51wpb7mpc8s"]
 
-[ext_resource type="Script" uid="uid://xo1wvhgv2aia" path="res://Scenes/turret_tesla.gd" id="1_oohm5"]
+[ext_resource type="Script" uid="uid://xo1wvhgv2aia" path="res://Scripts/turret_tesla.gd" id="1_oohm5"]
 [ext_resource type="Texture2D" uid="uid://d0kwbcwmqfw8g" path="res://assets/Turrets/turret_bottom.png" id="2_oohm5"]
 [ext_resource type="Texture2D" uid="uid://f75rim8oli7i" path="res://assets/Turrets/turret_tesla.png" id="3_k4vo1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
-radius = 54.147945
+radius = 198.00252
 
 [node name="tesla" type="Node2D" unique_id=1786636331]
 script = ExtResource("1_oohm5")
 
 [node name="Podstavec_turrety" type="Sprite2D" parent="." unique_id=79751571]
+scale = Vector2(3.6875, 3.6875)
 texture = ExtResource("2_oohm5")
 
 [node name="vez_turrety" type="Sprite2D" parent="." unique_id=1297442638]
 rotation = 1.5707964
-scale = Vector2(1.4609374, 1.4609374)
+scale = Vector2(3.2249181, 3.2249181)
 texture = ExtResource("3_k4vo1")
 
 [node name="attackRange" type="Area2D" parent="." unique_id=1331218745]

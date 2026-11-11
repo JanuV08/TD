@@ -2,6 +2,7 @@ class_name Enemy
 extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 var last_position: Vector2 = Vector2.ZERO
 
@@ -10,7 +11,6 @@ var last_position: Vector2 = Vector2.ZERO
 
 @export var max_hp: int = 20
 var current_hp: int
-@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
 	last_position = global_position
@@ -19,13 +19,24 @@ func _ready() -> void:
 	health_bar.value = current_hp 
 
 func _process(_delta: float) -> void:
-	
 	if not is_instance_valid(animated_sprite):
 		return
-
+	
+	health_bar.value = current_hp
+	
 	var movement_vector: Vector2 = global_position - last_position
 	update_animation(movement_vector)
 	last_position = global_position
+
+func take_damage(amount: int) -> void:
+	current_hp -= amount
+	print("HP nepřítele ", name, " kleslo na: ", current_hp)
+	
+	if has_node("ProgressBar"):
+		$CharacterBody2D/ProgressBar.value = current_hp
+		
+	if current_hp <= 0:
+		queue_free()
 
 func update_animation(dir: Vector2) -> void:
 	if not is_instance_valid(animated_sprite) or animated_sprite.sprite_frames == null:

@@ -36,7 +36,7 @@ func levelSpawn() -> void:
 			Global.enemiesSpawned = 5
 			
 			spawn(enemyLVL1_scene)
-			await wait(0.5)
+			await wait(1.5)
 			spawn(enemyLVL1_scene)
 			await wait(3)
 			
