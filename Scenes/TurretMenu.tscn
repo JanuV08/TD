@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ir7g2f7htqh7"]
+
+[ext_resource type="Script" path="res://Scripts/turret_menu.gd" id="1_u5dek"]
+[ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="2_jfwhd"]
+[ext_resource type="Texture2D" uid="uid://l7yv7v4oq7t6" path="res://assets/GUI/dropMenu/menu-background.png" id="2_ml0hc"]
+[ext_resource type="Texture2D" path="res://assets/Turrets/turret_tesla.png" id="3_1e11k"]
+[ext_resource type="Texture2D" path="res://assets/Turrets/railgun_turret.png" id="5_p3dkr"]
+
+[node name="TurretMenu" type="Control" unique_id=1637748730]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u5dek")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1460726813]
+layout_mode = 0
+offset_left = 18.0
+offset_right = 146.0
+offset_bottom = 256.0
+texture = ExtResource("2_ml0hc")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=1889112696]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 73.0
+offset_bottom = 71.0
+texture_normal = ExtResource("2_jfwhd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton" unique_id=319614464]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 43.0
+text = "Cannon"
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect" unique_id=6398421]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 79.0
+offset_right = 77.0
+offset_bottom = 143.0
+texture_normal = ExtResource("3_1e11k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton2" unique_id=1112002746]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 19.0
+offset_right = 201.0
+offset_bottom = 42.0
+text = "Tesla"
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect" unique_id=1498376992]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 151.0
+offset_right = 106.0
+offset_bottom = 200.0
+texture_normal = ExtResource("5_p3dkr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton3" unique_id=1323412106]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 13.0
+offset_right = 127.0
+offset_bottom = 36.0
+
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_button_3_pressed"]

@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bq2tleklc1ll1" path="res://assets/GUI/levelSelect/level-select-1-idle.png" id="6_344ge"]
 [ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/levelSelect/level-select-1-completed.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://coxir4cy1wbyb" path="res://assets/Map/tileset_v0.png" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://dnkeg2l8obrw5" path="res://assets/GUI/gameUI/healthBar.png" id="9_hptm8"]
+[ext_resource type="Texture2D" uid="uid://bu3mv5bun4v5t" path="res://assets/GUI/gameUI/healthBar_progress.png" id="10_d1ilt"]
+[ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="11_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://6lm2qv72j1s7" path="res://assets/GUI/gameUI/enemies_left_icon.png" id="12_6iyac"]
+[ext_resource type="Texture2D" uid="uid://cxksrnasgpnwa" path="res://assets/GUI/gameUI/gold_icon.png" id="13_fdnlq"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -68,6 +73,55 @@ use_parent_material = true
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAATAAkAAAACAAAAADATAAgAAAACAAEAADATAAcAAAACAAAAADATAAYAAAACAAEAADASAAUAAAADAAAAADASAAYAAAADAAEAADASAAcAAAADAAAAADASAAgAAAADAAEAADASAAkAAAADAAAAADASAAQAAAADAAEAADASAAMAAAACAAAAAGASAAIAAAADAAAAAGATAAQAAAACAAEAADATAAMAAAACAAEAAGAUAAIAAAADAAAAAGATAAUAAAACAAAAADATAAIAAAADAAEAAGAVAAIAAAADAAEAAGAWAAMAAAACAAAAAGAXAAMAAAACAAEAAGAYAAMAAAACAAAAAGAZAAMAAAACAAEAAGAaAAMAAAACAAAAAGAbAAMAAAACAAEAAGAcAAMAAAACAAAAAGAdAAIAAAADAAEAAGAeAAIAAAADAAAAAGAcAAIAAAADAAAAAGAbAAIAAAADAAEAAGAaAAIAAAADAAAAAGAZAAIAAAADAAEAAGAYAAIAAAADAAAAAGAXAAIAAAADAAEAAGAWAAIAAAADAAAAAGAfAAIAAAACAAAAAAAgAAIAAAADAAAAAAAdAAMAAAACAAEAAGAVAAMAAAACAAEAAGAUAAMAAAACAAAAAGAfAAMAAAACAAEAAAAeAAMAAAACAAAAAGAgAAMAAAADAAEAAAAgAAQAAAADAAAAAAAgAAUAAAADAAEAAAAgAAYAAAADAAAAAAAgAAcAAAADAAEAAAAgAAgAAAADAAAAAAAgAAkAAAADAAEAAAAgAAoAAAADAAAAAAAgAAsAAAADAAEAAAAgAAwAAAADAAAAAAAgAA0AAAADAAEAAAAgAA4AAAADAAAAAAAgAA8AAAADAAEAAAAgABAAAAADAAAAAAAgABEAAAADAAEAAAAgABIAAAACAAEAADAgABMAAAACAAAAADAfABMAAAADAAAAADAfABIAAAADAAEAADAfABEAAAACAAEAAAAfAAQAAAACAAAAAAAfAAUAAAACAAEAAAAfAAYAAAACAAAAAAAfAAcAAAACAAEAAAAfAAgAAAACAAAAAAAfAAkAAAACAAEAAAAfAAoAAAACAAAAAAAfAAsAAAACAAEAAAAfAAwAAAACAAAAAAAfAA0AAAACAAEAAAAfAA4AAAACAAAAAAAfAA8AAAACAAEAAAAfABAAAAACAAAAAAASAAsAAAACAAEAAFASAAoAAAACAAAAAAATAAsAAAACAAAAAFATAAoAAAADAAAAAAADAAsAAAACAAAAAFADAAwAAAADAAAAAFACAAsAAAACAAEAAFACAAwAAAADAAEAAFAFAAsAAAACAAAAAFAFAAwAAAADAAAAAFAEAAsAAAACAAEAAFAEAAwAAAADAAEAAFAHAAsAAAACAAAAAFAHAAwAAAADAAAAAFAGAAsAAAACAAEAAFAGAAwAAAADAAEAAFAJAAsAAAACAAAAAFAJAAwAAAADAAAAAFAIAAsAAAACAAEAAFAIAAwAAAADAAEAAFALAAsAAAACAAAAAFALAAwAAAADAAAAAFAKAAsAAAACAAEAAFAKAAwAAAADAAEAAFANAAsAAAACAAAAAFANAAwAAAADAAAAAFAMAAsAAAACAAEAAFAMAAwAAAADAAEAAFAPAAsAAAACAAAAAFAPAAwAAAADAAAAAFAOAAsAAAACAAEAAFAOAAwAAAADAAEAAFARAAsAAAACAAAAAFARAAwAAAADAAAAAFAQAAsAAAACAAEAAFAQAAwAAAADAAEAAFATAAwAAAADAAAAAFASAAwAAAADAAEAAFA=")
 tile_set = SubResource("TileSet_ujabj")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=2095140775]
+offset_left = 1487.0
+offset_top = 1046.0
+offset_right = 1831.0
+offset_bottom = 1132.0
+value = 100.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("9_hptm8")
+texture_over = ExtResource("9_hptm8")
+texture_progress = ExtResource("10_d1ilt")
+
+[node name="HP" type="Label" parent="." unique_id=1743746355]
+offset_left = 1647.0
+offset_top = 1068.0
+offset_right = 1787.0
+offset_bottom = 1113.0
+theme_override_fonts/font = ExtResource("11_d1ilt")
+theme_override_font_sizes/font_size = 32
+text = "100 / 100"
+
+[node name="enemiesLeft" type="Label" parent="." unique_id=469534580]
+offset_left = 1547.0
+offset_top = 1142.0
+offset_right = 1608.0
+offset_bottom = 1179.0
+theme_override_fonts/font = ExtResource("11_d1ilt")
+theme_override_font_sizes/font_size = 32
+
+[node name="enemiesLeftIcon" type="Sprite2D" parent="." unique_id=1413884386]
+position = Vector2(1520, 1160)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("12_6iyac")
+
+[node name="goldIcon" type="Sprite2D" parent="." unique_id=1965762682]
+position = Vector2(1787.0001, 1160)
+scale = Vector2(1.4687469, 1.4687469)
+texture = ExtResource("13_fdnlq")
+
+[node name="gold" type="Label" parent="." unique_id=1550045394]
+offset_left = 1668.0
+offset_top = 1143.0
+offset_right = 1762.0
+offset_bottom = 1181.0
+theme_override_fonts/font = ExtResource("11_d1ilt")
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 2
 
 [connection signal="body_entered" from="Konec" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="waveButton" to="." method="_on_button_pressed"]

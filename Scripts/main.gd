@@ -6,6 +6,15 @@ var enemyLVL3_scene: PackedScene = preload("res://Scenes/enemyLVL3.tscn")
 var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
 func _process(_delta: float) -> void:
+	$enemiesLeft.text = "1".repeat(max(0, 5 - Global.enemiesKilled))
+	$gold.text = "100" #str(Global.gold)
+	
+	
+	$HP.text = str(Global.health) + " / 100"
+	$HealthBar.value = Global.health
+	if Global.health <= (Global.health * 0.3):
+			$HealthBar.tint_progress = Color.RED
+	
 	if Global.nextBtnPressed == true:
 		Global.nextBtnPressed = false 
 		$waveButton.disabled = false

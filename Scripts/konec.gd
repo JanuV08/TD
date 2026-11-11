@@ -31,5 +31,7 @@ func _on_body_entered(body: Node2D) -> void:
 				Global.health -= 5
 			"lvl2":
 				Global.health -= 10
+			"lvl3":
+				Global.health -= 10
 		if Global.health <= 0:
 			Global.health = 0
