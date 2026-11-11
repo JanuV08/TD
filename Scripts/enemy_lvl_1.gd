@@ -36,6 +36,8 @@ func take_damage(amount: int) -> void:
 		$CharacterBody2D/ProgressBar.value = current_hp
 		
 	if current_hp <= 0:
+		Global.enemyCount -= 1
+		Global.enemiesKilled += 1
 		queue_free()
 
 func update_animation(dir: Vector2) -> void:

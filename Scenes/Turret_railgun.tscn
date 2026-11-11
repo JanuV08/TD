@@ -29,7 +29,7 @@ position = Vector2(-19.850267, 3.372835e-07)
 shape = SubResource("CircleShape2D_5gviv")
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=288386683]
-wait_time = 5.0
+wait_time = 2.5
 
 [connection signal="body_entered" from="range_Area2D" to="." method="_on_range_area_2d_body_entered"]
 [connection signal="body_exited" from="range_Area2D" to="." method="_on_range_area_2d_body_exited"]
