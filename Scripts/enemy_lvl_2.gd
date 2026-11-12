@@ -5,14 +5,19 @@ extends Node2D
 
 var last_position: Vector2 = Vector2.ZERO
 
-var max_health: int
-var current_health: int
-var speed: float
-var gold_reward: int
-var enemy_name: String
+@export var damage_to_base : int = 10
+@export var enemy_type: String = "lvl2"
+
+var current_hp: int
+@export var max_hp: int = 10
+@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
 	last_position = global_position
+	last_position = global_position
+	current_hp = max_hp
+	health_bar.max_value = max_hp
+	health_bar.value = current_hp 
 
 func _process(_delta: float) -> void:
 	if not is_instance_valid(animated_sprite):

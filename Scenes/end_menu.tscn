@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://bse0idb57tyit"]
+
+[ext_resource type="Script" uid="uid://cg4g5gbbmwlhb" path="res://Scripts/end_menu.gd" id="1_wrsnd"]
+[ext_resource type="Texture2D" uid="uid://cm4sayxgsj61u" path="res://assets/GUI/endMenu/end-menu-won.png" id="2_rrpri"]
+[ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="3_e214x"]
+[ext_resource type="Texture2D" uid="uid://bm46k4t65rihx" path="res://assets/GUI/mainMenu/main-menu-button-idle.png" id="4_tx7ng"]
+[ext_resource type="Texture2D" uid="uid://dalkf88x0h0k7" path="res://assets/GUI/mainMenu/main-menu-button-hover.png" id="5_77tpm"]
+
+[node name="end_menu" type="Control" unique_id=1196709590]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrsnd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=55386379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=964539029]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -201.0
+offset_right = 402.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 320)
+texture = ExtResource("2_rrpri")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=603441350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -87.0
+offset_right = 333.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_e214x")
+theme_override_font_sizes/font_size = 48
+text = "SECTOR CLEARED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="menuBtn" type="TextureButton" parent="TextureRect" unique_id=1899377210]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = 26.0
+offset_right = -52.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tx7ng")
+texture_hover = ExtResource("5_77tpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/menuBtn" unique_id=1688678903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_e214x")
+theme_override_font_sizes/font_size = 24
+text = "MENU"
+
+[node name="nextBtn" type="TextureButton" parent="TextureRect" unique_id=738872629]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = 26.0
+offset_right = 217.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tx7ng")
+texture_hover = ExtResource("5_77tpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/nextBtn" unique_id=2117037301]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_e214x")
+theme_override_font_sizes/font_size = 24
+text = "NEXT"
+
+[connection signal="pressed" from="TextureRect/menuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="TextureRect/nextBtn" to="." method="_on_next_btn_pressed"]

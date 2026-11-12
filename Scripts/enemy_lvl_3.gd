@@ -1,34 +1,25 @@
-class_name Enemy
+class_name EnemyLVL3
 extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
 var last_position: Vector2 = Vector2.ZERO
 
-var max_health: int
-var current_health: int
-var speed: float
-var gold_reward: int
-var enemy_name: String
+@export var damage_to_base : int = 15
+@export var enemy_type: String = "lvl3"
 
-@export var max_hp: int = 20
 var current_hp: int
+@export var max_hp: int = 10
 @onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
+	last_position = global_position
 	last_position = global_position
 	current_hp = max_hp
 	health_bar.max_value = max_hp
 	health_bar.value = current_hp 
 
 func _process(_delta: float) -> void:
-	
-	current_hp -= 1
-	health_bar.value = current_health
-	if current_hp <= 0:
-		queue_free()
-		Global.enemyCount -=1
-	
 	if not is_instance_valid(animated_sprite):
 		return
 

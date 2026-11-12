@@ -1,17 +1,33 @@
-[gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
+[gd_scene format=4 uid="uid://db3x6hhv5s5yi"]
 
 [ext_resource type="Script" uid="uid://c1y81ttrmfsba" path="res://Scripts/main.gd" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://cd5jnso617qjs" path="res://Scripts/path_follow_2d.gd" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://srntnqprdk5g" path="res://Scenes/drop_down.tscn" id="3_344ge"]
 [ext_resource type="PackedScene" uid="uid://b0xog2jy3oe6k" path="res://Scenes/konec.tscn" id="4_ynf5e"]
 [ext_resource type="Script" uid="uid://lkg6rspy2y2j" path="res://Scripts/label_hp.gd" id="5_hptm8"]
-[ext_resource type="PackedScene" uid="uid://dtva6cmfdy176" path="res://Scenes/tile_map.tscn" id="6_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://bq2tleklc1ll1" path="res://assets/GUI/levelSelect/level-select-1-idle.png" id="6_344ge"]
+[ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/levelSelect/level-select-1-completed.png" id="7_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://coxir4cy1wbyb" path="res://assets/Map/tileset_v0.png" id="8_344ge"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 9, 395, 0, 0, 0, 0, 801, 394, 0, 0, 0, 0, 795, 9, 0, 0, 0, 0, 1428, 8, 0, 0, 0, 0, 1426, 826)
 }
 point_count = 5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1n30v"]
+texture = ExtResource("8_344ge")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ujabj"]
+sources/0 = SubResource("TileSetAtlasSource_1n30v")
 
 [node name="main" type="Node2D" unique_id=1509445311]
 script = ExtResource("1_21xkr")
@@ -29,7 +45,7 @@ script = ExtResource("2_6bp64")
 [node name="PauseMenu" parent="." unique_id=1427811714 instance=ExtResource("3_344ge")]
 
 [node name="Konec" parent="." unique_id=385382761 instance=ExtResource("4_ynf5e")]
-position = Vector2(1536, 969)
+position = Vector2(870, 536)
 
 [node name="labelHP" type="Label" parent="." unique_id=59424855]
 offset_left = 466.0
@@ -38,15 +54,20 @@ offset_right = 554.0
 offset_bottom = 403.0
 script = ExtResource("5_hptm8")
 
-[node name="waveButton" type="Button" parent="." unique_id=1777386107]
+[node name="waveButton" type="TextureButton" parent="." unique_id=948820003]
 offset_left = 654.0
 offset_top = 391.0
 offset_right = 691.0
 offset_bottom = 428.0
+texture_normal = ExtResource("6_344ge")
+texture_disabled = ExtResource("7_ynf5e")
 
-[node name="TileMap" parent="." unique_id=1323716241 instance=ExtResource("6_d1ilt")]
-visibility_layer = 2
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=733187884]
 z_index = -1
+use_parent_material = true
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAATAAkAAAACAAAAADATAAgAAAACAAEAADATAAcAAAACAAAAADATAAYAAAACAAEAADASAAUAAAADAAAAADASAAYAAAADAAEAADASAAcAAAADAAAAADASAAgAAAADAAEAADASAAkAAAADAAAAADASAAQAAAADAAEAADASAAMAAAACAAAAAGASAAIAAAADAAAAAGATAAQAAAACAAEAADATAAMAAAACAAEAAGAUAAIAAAADAAAAAGATAAUAAAACAAAAADATAAIAAAADAAEAAGAVAAIAAAADAAEAAGAWAAMAAAACAAAAAGAXAAMAAAACAAEAAGAYAAMAAAACAAAAAGAZAAMAAAACAAEAAGAaAAMAAAACAAAAAGAbAAMAAAACAAEAAGAcAAMAAAACAAAAAGAdAAIAAAADAAEAAGAeAAIAAAADAAAAAGAcAAIAAAADAAAAAGAbAAIAAAADAAEAAGAaAAIAAAADAAAAAGAZAAIAAAADAAEAAGAYAAIAAAADAAAAAGAXAAIAAAADAAEAAGAWAAIAAAADAAAAAGAfAAIAAAACAAAAAAAgAAIAAAADAAAAAAAdAAMAAAACAAEAAGAVAAMAAAACAAEAAGAUAAMAAAACAAAAAGAfAAMAAAACAAEAAAAeAAMAAAACAAAAAGAgAAMAAAADAAEAAAAgAAQAAAADAAAAAAAgAAUAAAADAAEAAAAgAAYAAAADAAAAAAAgAAcAAAADAAEAAAAgAAgAAAADAAAAAAAgAAkAAAADAAEAAAAgAAoAAAADAAAAAAAgAAsAAAADAAEAAAAgAAwAAAADAAAAAAAgAA0AAAADAAEAAAAgAA4AAAADAAAAAAAgAA8AAAADAAEAAAAgABAAAAADAAAAAAAgABEAAAADAAEAAAAgABIAAAACAAEAADAgABMAAAACAAAAADAfABMAAAADAAAAADAfABIAAAADAAEAADAfABEAAAACAAEAAAAfAAQAAAACAAAAAAAfAAUAAAACAAEAAAAfAAYAAAACAAAAAAAfAAcAAAACAAEAAAAfAAgAAAACAAAAAAAfAAkAAAACAAEAAAAfAAoAAAACAAAAAAAfAAsAAAACAAEAAAAfAAwAAAACAAAAAAAfAA0AAAACAAEAAAAfAA4AAAACAAAAAAAfAA8AAAACAAEAAAAfABAAAAACAAAAAAASAAsAAAACAAEAAFASAAoAAAACAAAAAAATAAsAAAACAAAAAFATAAoAAAADAAAAAAADAAsAAAACAAAAAFADAAwAAAADAAAAAFACAAsAAAACAAEAAFACAAwAAAADAAEAAFAFAAsAAAACAAAAAFAFAAwAAAADAAAAAFAEAAsAAAACAAEAAFAEAAwAAAADAAEAAFAHAAsAAAACAAAAAFAHAAwAAAADAAAAAFAGAAsAAAACAAEAAFAGAAwAAAADAAEAAFAJAAsAAAACAAAAAFAJAAwAAAADAAAAAFAIAAsAAAACAAEAAFAIAAwAAAADAAEAAFALAAsAAAACAAAAAFALAAwAAAADAAAAAFAKAAsAAAACAAEAAFAKAAwAAAADAAEAAFANAAsAAAACAAAAAFANAAwAAAADAAAAAFAMAAsAAAACAAEAAFAMAAwAAAADAAEAAFAPAAsAAAACAAAAAFAPAAwAAAADAAAAAFAOAAsAAAACAAEAAFAOAAwAAAADAAEAAFARAAsAAAACAAAAAFARAAwAAAADAAAAAFAQAAsAAAACAAEAAFAQAAwAAAADAAEAAFATAAwAAAADAAAAAFASAAwAAAADAAEAAFA=")
+tile_set = SubResource("TileSet_ujabj")
 
 [connection signal="body_entered" from="Konec" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="waveButton" to="." method="_on_button_pressed"]
