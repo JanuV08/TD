@@ -22,11 +22,10 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1875128860]
-visible = false
 offset_left = 80.0
 offset_top = 10.24
 offset_right = 336.0
-offset_bottom = 522.24
+offset_bottom = 329.0
 texture = ExtResource("3_y7fiv")
 
 [node name="SettBtn" type="TextureButton" parent="TextureRect" unique_id=950070692]
@@ -34,10 +33,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -94.0
-offset_top = 43.0
-offset_right = 98.0
-offset_bottom = 139.0
+offset_left = -96.0
+offset_top = 39.0
+offset_right = 96.0
+offset_bottom = 135.0
 grow_horizontal = 2
 texture_normal = ExtResource("4_667ev")
 texture_hover = ExtResource("5_y7fiv")
@@ -65,17 +64,17 @@ vertical_alignment = 1
 
 [node name="ExitBtn" type="TextureButton" parent="TextureRect" unique_id=415281832]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = -72.0
-offset_right = 98.0
-offset_bottom = 24.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -148.0
+offset_right = 96.0
+offset_bottom = -52.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 texture_normal = ExtResource("4_667ev")
 texture_hover = ExtResource("5_y7fiv")
 ignore_texture_size = true

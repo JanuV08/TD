@@ -1,11 +1,28 @@
 [gd_scene format=3 uid="uid://bdcc0xw23oamx"]
 
 [ext_resource type="Script" uid="uid://bbqvbkh1q8p0h" path="res://Scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Shader" uid="uid://bf5ufsm6t7hhv" path="res://Scenes/main_menu.gdshader" id="2_n45e2"]
 [ext_resource type="Texture2D" uid="uid://bm46k4t65rihx" path="res://assets/GUI/mainMenu/main-menu-button-idle.png" id="2_opfnp"]
 [ext_resource type="Texture2D" uid="uid://dalkf88x0h0k7" path="res://assets/GUI/mainMenu/main-menu-button-hover.png" id="3_ce3w2"]
+[ext_resource type="Shader" uid="uid://gcq8y13phgum" path="res://Scenes/main_menu_blur.gdshader" id="3_opfnp"]
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="4_opfnp"]
+[ext_resource type="FontFile" uid="uid://ch5qx16xhvfbv" path="res://assets/fonts/MidnightLetters-Regular.ttf" id="7_cp0ys"]
 
-[node name="MainMenu" type="Control" unique_id=1862327775]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4kgei"]
+shader = ExtResource("2_n45e2")
+shader_parameter/top_color = Color(0.16664058, 0.021158572, 0.1243308, 1)
+shader_parameter/bottom_color = Color(0.04, 0.06, 0.12, 1)
+shader_parameter/grid_color = Color(1, 0, 0.49803922, 1)
+shader_parameter/horizon_color = Color(0.25, 0.72, 1, 1)
+shader_parameter/speed = 0.8
+shader_parameter/grid_density = 12.0
+shader_parameter/horizon_pos = 0.42
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_he84e"]
+shader = ExtResource("3_opfnp")
+shader_parameter/blur_amount = 2.5
+
+[node name="MainMenu" type="Control" unique_id=1862327775 node_paths=PackedStringArray("bg_rect", "btn_initiate", "btn_abort")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +33,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_06t4h")
+bg_rect = NodePath("background")
+btn_initiate = NodePath("playBtn")
+btn_abort = NodePath("quitBtn")
+
+[node name="background" type="ColorRect" parent="." unique_id=1710350485]
+material = SubResource("ShaderMaterial_4kgei")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blur" type="ColorRect" parent="." unique_id=565568834]
+material = SubResource("ShaderMaterial_he84e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="playBtn" type="TextureButton" parent="." unique_id=1705031711]
 layout_mode = 1
@@ -85,6 +127,21 @@ theme_override_font_sizes/font_size = 42
 text = "ABORT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1956288882]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -5.0
+offset_bottom = 411.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_cp0ys")
+theme_override_font_sizes/font_size = 128
+text = "TOWER
+DEFENSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="mouse_entered" from="playBtn" to="." method="_on_play_btn_mouse_entered"]
 [connection signal="mouse_exited" from="playBtn" to="." method="_on_play_btn_mouse_exited"]
