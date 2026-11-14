@@ -39,3 +39,7 @@ func _on_lvl_2_btn_mouse_entered() -> void:
 	lvl2Btn.scale = Vector2(1.1,1.1)
 func _on_lvl_2_btn_mouse_exited() -> void:
 	lvl2Btn.scale = Vector2(1.0,1.0)
+
+
+func _on_back_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

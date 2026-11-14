@@ -20,7 +20,7 @@ const INITIATE_HORIZON = Color(0.45, 0.95, 1.0)
 # Paleta při najetí na ABORT (ladí s jeho růžovým rámečkem)
 const ABORT_TOP = Color(0.55, 0.08, 0.28)
 const ABORT_GRID = Color(1.0, 0.08, 0.55)
-const ABORT_HORIZON = Color(1.0, 0.35, 0.15)
+const ABORT_HORIZON = Color("#ffa3d7")
 
 var bg_tween: Tween
 
