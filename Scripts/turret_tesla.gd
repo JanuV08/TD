@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var damage_timer = $DamageTimer
 
+
 var enemies_in_range: Array = []
 var damage_amount: int = 10
 @export var cost: int = 250
@@ -10,16 +11,13 @@ func _get_enemy_node(body: Node2D) -> Node2D:
 	if body == null:
 		return null
 		
-	# Pokud má skript přímo body (je to přímo kořen nepřítele)
 	if body.has_method("take_damage"):
 		return body
 		
-	# Pokud má skript rodič (body je CharacterBody2D / Area2D)
 	var parent = body.get_parent()
 	if parent != null and parent.has_method("take_damage"):
 		return parent
 		
-	# Založeno na skupině "enemy"
 	if body.is_in_group("enemy"):
 		return body
 	if parent != null and parent.is_in_group("enemy"):
@@ -57,13 +55,44 @@ func _on_damage_timer_timeout() -> void:
 		
 	for enemy in enemies_in_range:
 		if is_instance_valid(enemy):
+			_spawn_lightning(enemy.global_position)
 			if enemy.has_method("take_damage"):
 				enemy.take_damage(damage_amount)
 			elif "current_hp" in enemy:
 				enemy.current_hp -= damage_amount
 				if enemy.current_hp <= 0:
 					enemy.queue_free()
-# Pomocná funkce na promazání smazaných objektů (mrtvol)
+
+func _spawn_lightning(target_pos: Vector2) -> void:
+	var outer_bolt = Line2D.new()
+	outer_bolt.width = 3.0
+	outer_bolt.default_color = Color(0.2, 1.8, 3.0, 1.0)
+	add_child(outer_bolt)
+	
+	var inner_bolt = Line2D.new()
+	inner_bolt.width = 1.0
+	inner_bolt.default_color = Color(2.5, 2.5, 2.5, 1.0)
+	add_child(inner_bolt)
+	
+	var start = Vector2(0, -10)
+	var end = to_local(target_pos)
+	
+	outer_bolt.add_point(start)
+	inner_bolt.add_point(start)
+	
+	for i in range(1, 4):
+		var mid = start.lerp(end, float(i) / 4.0)
+		mid += Vector2(randf_range(-8, 8), randf_range(-8, 8))
+		outer_bolt.add_point(mid)
+		inner_bolt.add_point(mid)
+		
+	outer_bolt.add_point(end)
+	inner_bolt.add_point(end)
+	
+	await get_tree().create_timer(0.1).timeout
+	outer_bolt.queue_free()
+	inner_bolt.queue_free()
+
 func _clean_enemies_array() -> void:
 	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
 	if enemies_in_range.is_empty() and not damage_timer.is_stopped():

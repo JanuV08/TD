@@ -5,6 +5,8 @@ extends Node2D
 var target: Node2D = null
 @export var damage_amount: int = 20
 @export var cost: int = 1000
+@export var bullet_scene: PackedScene = preload("res://Scenes/Shell_railgun.tscn") # Změň v Inspektoru na scénu s modrým paprskem
+@export var bullet_speed: float = 1600.0
 
 func _get_enemy_node(body: Node2D) -> Node2D:
 	if body == null:
@@ -53,6 +55,17 @@ func _on_range_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_damage_timer_timeout() -> void:
 	if is_instance_valid(target):
+		# --- Vystřelení vizuálního paprsku ---
+		if bullet_scene != null:
+			var bullet = bullet_scene.instantiate()
+			# Pokud máš pod $vez_turrety uzel Muzzle, změň na $vez_turrety/Muzzle.global_position
+			bullet.global_position = $vez_turrety/Marker2D.global_position
+			bullet.target_pos = target.global_position
+			bullet.speed = bullet_speed
+			bullet.look_at(target.global_position)
+			get_tree().current_scene.add_child(bullet)
+		# ------------------------------------
+		
 		if target.has_method("take_damage"):
 			target.take_damage(damage_amount)
 		elif "current_hp" in target:
