@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://wt5m52y8ke0d"]
+
+[ext_resource type="Script" uid="uid://sbiw64ol5iq6" path="res://Scripts/shell_canon.gd" id="1_8cduh"]
+[ext_resource type="Texture2D" uid="uid://dftft3fm18a1w" path="res://assets/Turrets/Shell_canon.png" id="2_hc7c3"]
+
+[node name="ShellCanon" type="Area2D" unique_id=1534444807]
+script = ExtResource("1_8cduh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169676481]
+position = Vector2(-1, 0)
+scale = Vector2(4.123, 4.123)
+texture = ExtResource("2_hc7c3")

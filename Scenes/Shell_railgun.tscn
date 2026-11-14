@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cdf0nj45hpfj1"]
+
+[ext_resource type="Script" uid="uid://dmcpack15hujq" path="res://Scripts/shell_railgun.gd" id="1_qco6s"]
+[ext_resource type="Texture2D" uid="uid://r0xf22eydgd" path="res://assets/Turrets/Shell_railgun.png" id="2_cpvdy"]
+
+[node name="ShellRailgun" type="Area2D" unique_id=1828501605]
+script = ExtResource("1_qco6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1115380131]
+scale = Vector2(4.123, 4.123)
+texture = ExtResource("2_cpvdy")

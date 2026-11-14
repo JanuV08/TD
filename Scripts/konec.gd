@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 			Global.lvl2Completed = true
 		$CanvasLayer.visible = true
 	
-	if Global.health <= 0:
+	if Global.enemiesSpawned > 0 and Global.enemiesKilled == Global.enemiesSpawned and Global.health <= 0:
 		Global.levelWon = false
 		if Global.level == 1:
 			Global.lvl1Completed = false

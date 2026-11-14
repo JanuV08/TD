@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dp304syb2sqg0" path="res://assets/Enemy/basic_mob_v1.png" id="2_xgwiv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n8fhi"]
-radius = 76.0
+radius = 57.035076
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4b07"]
 atlas = ExtResource("2_xgwiv")
@@ -114,13 +114,13 @@ bg_color = Color(0.662597, 0.058615543, 3.3691526e-07, 1)
 [node name="enemyLVL2" type="Node2D" unique_id=275062625]
 script = ExtResource("1_xgwiv")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1922679558]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1922679558 groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1152484247]
 shape = SubResource("CircleShape2D_n8fhi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1937547509]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_k4yrk")
 animation = &"walk_down"
 
@@ -129,9 +129,9 @@ anchors_preset = -1
 anchor_right = 0.0062499046
 anchor_bottom = 0.0009191036
 offset_left = -33.0
-offset_top = -93.0
+offset_top = -69.0
 offset_right = 35.0
-offset_bottom = -83.0
+offset_bottom = -59.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_21xkr")
 step = 1.0
 rounded = true
