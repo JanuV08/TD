@@ -137,3 +137,16 @@ step = 1.0
 rounded = true
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="DeathParticles" type="CPUParticles2D" parent="CharacterBody2D" unique_id=2100965305]
+emitting = false
+amount = 35
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+initial_velocity_min = 60.0
+initial_velocity_max = 140.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color = Color(1, 0, 0.49803922, 1)
