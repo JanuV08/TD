@@ -10,6 +10,7 @@ var last_position: Vector2 = Vector2.ZERO
 
 var current_hp: int
 @export var max_hp: int = 10
+@export var speed: float = 200.0
 @onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:

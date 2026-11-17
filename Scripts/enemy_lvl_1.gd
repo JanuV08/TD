@@ -9,6 +9,7 @@ var last_position: Vector2 = Vector2.ZERO
 @export var enemy_type: String = "lvl1"
 
 @export var max_hp: int = 20
+@export var speed: float = 450.0
 var current_hp: int
 @onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 

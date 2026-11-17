@@ -4,7 +4,6 @@
 [ext_resource type="Shader" uid="uid://bf5ufsm6t7hhv" path="res://Scenes/main_menu.gdshader" id="2_jemul"]
 [ext_resource type="Shader" uid="uid://gcq8y13phgum" path="res://Scenes/main_menu_blur.gdshader" id="3_si05j"]
 [ext_resource type="Texture2D" uid="uid://dsi6vurhcs0aa" path="res://assets/GUI/levelSelect/level-select-idle.png" id="4_tnejx"]
-[ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/levelSelect/level-select-1-completed.png" id="4_xgpx1"]
 [ext_resource type="Texture2D" uid="uid://4uk60i0h83oe" path="res://assets/GUI/levelSelect/level-select-hover.png" id="5_si05j"]
 [ext_resource type="FontFile" uid="uid://ch5qx16xhvfbv" path="res://assets/fonts/MidnightLetters-Regular.ttf" id="7_tnejx"]
 [ext_resource type="Texture2D" uid="uid://omvl51mbbp8f" path="res://assets/GUI/gameUI/back_button-idle.png" id="10_tnejx"]
@@ -49,23 +48,18 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="lvl1Btn" type="TextureButton" parent="." unique_id=1569240790]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 440.0
-offset_right = 424.0
-offset_bottom = 568.0
+offset_left = 300.0
+offset_top = 400.0
+offset_right = 428.0
+offset_bottom = 528.0
 texture_normal = ExtResource("4_tnejx")
 texture_hover = ExtResource("5_si05j")
-texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -84,13 +78,12 @@ vertical_alignment = 1
 
 [node name="lvl2Btn" type="TextureButton" parent="." unique_id=934986800]
 layout_mode = 0
-offset_left = 596.0
-offset_top = 440.0
-offset_right = 724.0
-offset_bottom = 568.0
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 728.0
+offset_bottom = 528.0
 texture_normal = ExtResource("4_tnejx")
 texture_hover = ExtResource("5_si05j")
-texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -114,15 +107,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -160.0
-offset_right = 64.0
-offset_bottom = -32.0
+offset_left = -60.0
+offset_top = -140.0
+offset_right = 68.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_tnejx")
 texture_hover = ExtResource("5_si05j")
-texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -146,15 +138,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 236.0
-offset_top = -160.0
-offset_right = 364.0
-offset_bottom = -32.0
+offset_left = 240.0
+offset_top = -140.0
+offset_right = 368.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_tnejx")
 texture_hover = ExtResource("5_si05j")
-texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -178,15 +169,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 536.0
-offset_top = -160.0
-offset_right = 664.0
-offset_bottom = -32.0
+offset_left = 540.0
+offset_top = -140.0
+offset_right = 668.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_tnejx")
 texture_hover = ExtResource("5_si05j")
-texture_disabled = ExtResource("4_xgpx1")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -205,8 +195,8 @@ vertical_alignment = 1
 
 [node name="backBtn" type="TextureButton" parent="." unique_id=1288367130]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_right = 93.0
+offset_bottom = 93.0
 texture_normal = ExtResource("10_tnejx")
 texture_hover = ExtResource("11_vcux0")
 ignore_texture_size = true
@@ -218,4 +208,13 @@ stretch_mode = 0
 [connection signal="mouse_entered" from="lvl2Btn" to="." method="_on_lvl_2_btn_mouse_entered"]
 [connection signal="mouse_exited" from="lvl2Btn" to="." method="_on_lvl_2_btn_mouse_exited"]
 [connection signal="pressed" from="lvl2Btn" to="." method="_on_lvl_2_btn_pressed"]
+[connection signal="mouse_entered" from="lvl3Btn" to="." method="_on_lvl_3_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl3Btn" to="." method="_on_lvl_3_btn_mouse_exited"]
+[connection signal="pressed" from="lvl3Btn" to="." method="_on_lvl_3_btn_pressed"]
+[connection signal="mouse_entered" from="lvl4Btn" to="." method="_on_lvl_4_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl4Btn" to="." method="_on_lvl_4_btn_mouse_exited"]
+[connection signal="pressed" from="lvl4Btn" to="." method="_on_lvl_4_btn_pressed"]
+[connection signal="mouse_entered" from="lvl5Btn" to="." method="_on_lvl_5_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl5Btn" to="." method="_on_lvl_5_btn_mouse_exited"]
+[connection signal="pressed" from="lvl5Btn" to="." method="_on_lvl_5_btn_pressed"]
 [connection signal="pressed" from="backBtn" to="." method="_on_back_btn_pressed"]
