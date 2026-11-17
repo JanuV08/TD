@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cowej1ujofcqj" path="res://assets/GUI/dropMenu/menu-button-icon.png" id="2_y7fiv"]
 [ext_resource type="Texture2D" uid="uid://dg618nm6eyrdu" path="res://assets/GUI/dropMenu/menu-button-icon-hover.png" id="3_85cpj"]
 [ext_resource type="Texture2D" uid="uid://l7yv7v4oq7t6" path="res://assets/GUI/dropMenu/menu-background.png" id="3_y7fiv"]
-[ext_resource type="Texture2D" uid="uid://bm46k4t65rihx" path="res://assets/GUI/mainMenu/main-menu-button-idle.png" id="4_667ev"]
-[ext_resource type="Texture2D" uid="uid://dalkf88x0h0k7" path="res://assets/GUI/mainMenu/main-menu-button-hover.png" id="5_y7fiv"]
+[ext_resource type="Texture2D" uid="uid://d24sr446uxugl" path="res://assets/GUI/mainMenu/main-menu-start-button-idle.png" id="5_vwhht"]
+[ext_resource type="Texture2D" uid="uid://ckeh17mttn2kb" path="res://assets/GUI/mainMenu/main-menu-start-button-hover.png" id="6_vwhht"]
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="7_vwhht"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1427811714]
@@ -26,7 +26,7 @@ visible = false
 offset_left = 80.0
 offset_top = 10.24
 offset_right = 336.0
-offset_bottom = 522.24
+offset_bottom = 329.0
 texture = ExtResource("3_y7fiv")
 
 [node name="SettBtn" type="TextureButton" parent="TextureRect" unique_id=950070692]
@@ -34,13 +34,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -94.0
-offset_top = 43.0
-offset_right = 98.0
-offset_bottom = 139.0
+offset_left = -96.0
+offset_top = 39.0
+offset_right = 96.0
+offset_bottom = 135.0
 grow_horizontal = 2
-texture_normal = ExtResource("4_667ev")
-texture_hover = ExtResource("5_y7fiv")
+texture_normal = ExtResource("5_vwhht")
+texture_hover = ExtResource("6_vwhht")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -65,19 +65,19 @@ vertical_alignment = 1
 
 [node name="ExitBtn" type="TextureButton" parent="TextureRect" unique_id=415281832]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = -72.0
-offset_right = 98.0
-offset_bottom = 24.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -148.0
+offset_right = 96.0
+offset_bottom = -52.0
 grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("4_667ev")
-texture_hover = ExtResource("5_y7fiv")
+grow_vertical = 0
+texture_normal = ExtResource("5_vwhht")
+texture_hover = ExtResource("6_vwhht")
 ignore_texture_size = true
 stretch_mode = 0
 

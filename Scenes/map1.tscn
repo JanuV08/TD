@@ -1,12 +1,27 @@
 [gd_scene format=3 uid="uid://c662fvhooagka"]
 
 [ext_resource type="Script" uid="uid://d1kl42aasr1ty" path="res://Scripts/map_1.gd" id="1_4pqaf"]
-[ext_resource type="Texture2D" uid="uid://bq2tleklc1ll1" path="res://assets/GUI/levelSelect/level-select-1-idle.png" id="2_d3x0h"]
-[ext_resource type="Texture2D" uid="uid://dv0166evar15t" path="res://assets/GUI/levelSelect/level-select-1-hover.png" id="3_xgpx1"]
-[ext_resource type="Texture2D" uid="uid://cvt6lcuo2mff4" path="res://assets/GUI/levelSelect/level-select-1-completed.png" id="4_xgpx1"]
-[ext_resource type="Texture2D" uid="uid://buxh50tjhgt2x" path="res://assets/GUI/levelSelect/level-select-2-idle.png" id="5_73eik"]
-[ext_resource type="Texture2D" uid="uid://b6a0unp343s3n" path="res://assets/GUI/levelSelect/level-select-2-hover.png" id="6_wouuh"]
-[ext_resource type="Texture2D" uid="uid://dgvfy8po0oxsy" path="res://assets/GUI/levelSelect/level-select-2-completed.png" id="7_jemul"]
+[ext_resource type="Shader" uid="uid://bf5ufsm6t7hhv" path="res://Scenes/main_menu.gdshader" id="2_jemul"]
+[ext_resource type="Shader" uid="uid://gcq8y13phgum" path="res://Scenes/main_menu_blur.gdshader" id="3_si05j"]
+[ext_resource type="Texture2D" uid="uid://dsi6vurhcs0aa" path="res://assets/GUI/levelSelect/level-select-idle.png" id="4_tnejx"]
+[ext_resource type="Texture2D" uid="uid://4uk60i0h83oe" path="res://assets/GUI/levelSelect/level-select-hover.png" id="5_si05j"]
+[ext_resource type="FontFile" uid="uid://ch5qx16xhvfbv" path="res://assets/fonts/MidnightLetters-Regular.ttf" id="7_tnejx"]
+[ext_resource type="Texture2D" uid="uid://omvl51mbbp8f" path="res://assets/GUI/gameUI/back_button-idle.png" id="10_tnejx"]
+[ext_resource type="Texture2D" uid="uid://crb2vqcwl83p7" path="res://assets/GUI/gameUI/back_button-hover.png" id="11_vcux0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnejx"]
+shader = ExtResource("2_jemul")
+shader_parameter/top_color = Color(0.16664058, 0.021158572, 0.1243308, 1)
+shader_parameter/bottom_color = Color(0.04, 0.06, 0.12, 1)
+shader_parameter/grid_color = Color(1, 0, 0.49803922, 1)
+shader_parameter/horizon_color = Color(0.25, 0.72, 1, 1)
+shader_parameter/speed = 0.8
+shader_parameter/grid_density = 12.0
+shader_parameter/horizon_pos = 0.42
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vcux0"]
+shader = ExtResource("3_si05j")
+shader_parameter/blur_amount = 2.5
 
 [node name="Control" type="Control" unique_id=363545599]
 layout_mode = 3
@@ -17,50 +32,175 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4pqaf")
 
+[node name="background" type="ColorRect" parent="." unique_id=929757781]
+material = SubResource("ShaderMaterial_tnejx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blur" type="ColorRect" parent="." unique_id=1358854884]
+material = SubResource("ShaderMaterial_vcux0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="lvl1Btn" type="TextureButton" parent="." unique_id=1569240790]
 layout_mode = 0
-offset_left = 356.0
-offset_top = 289.0
-offset_right = 500.0
-offset_bottom = 433.0
-texture_normal = ExtResource("2_d3x0h")
-texture_hover = ExtResource("3_xgpx1")
-texture_disabled = ExtResource("4_xgpx1")
+offset_left = 300.0
+offset_top = 400.0
+offset_right = 428.0
+offset_bottom = 528.0
+texture_normal = ExtResource("4_tnejx")
+texture_hover = ExtResource("5_si05j")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Label" type="Label" parent="lvl1Btn" unique_id=105444742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_tnejx")
+theme_override_font_sizes/font_size = 48
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="lvl2Btn" type="TextureButton" parent="." unique_id=934986800]
 layout_mode = 0
-offset_left = 615.0
-offset_top = 289.0
-offset_right = 759.0
-offset_bottom = 433.0
-texture_normal = ExtResource("5_73eik")
-texture_hover = ExtResource("6_wouuh")
-texture_disabled = ExtResource("7_jemul")
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 728.0
+offset_bottom = 528.0
+texture_normal = ExtResource("4_tnejx")
+texture_hover = ExtResource("5_si05j")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Button3" type="Button" parent="." unique_id=1518989396]
-layout_mode = 0
-offset_left = 877.0
-offset_top = 289.0
-offset_right = 1021.0
-offset_bottom = 433.0
+[node name="Label" type="Label" parent="lvl2Btn" unique_id=529258202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_tnejx")
+theme_override_font_sizes/font_size = 48
+text = "02"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button4" type="Button" parent="." unique_id=894661780]
-layout_mode = 0
-offset_left = 1126.0
-offset_top = 295.0
-offset_right = 1270.0
-offset_bottom = 439.0
+[node name="lvl3Btn" type="TextureButton" parent="." unique_id=1852961442]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -140.0
+offset_right = 68.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tnejx")
+texture_hover = ExtResource("5_si05j")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Button5" type="Button" parent="." unique_id=873553795]
+[node name="Label" type="Label" parent="lvl3Btn" unique_id=1090711990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_tnejx")
+theme_override_font_sizes/font_size = 48
+text = "03"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl4Btn" type="TextureButton" parent="." unique_id=1870363051]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_top = -140.0
+offset_right = 368.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tnejx")
+texture_hover = ExtResource("5_si05j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="lvl4Btn" unique_id=177885900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_tnejx")
+theme_override_font_sizes/font_size = 48
+text = "04"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl5Btn" type="TextureButton" parent="." unique_id=1272724439]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 540.0
+offset_top = -140.0
+offset_right = 668.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tnejx")
+texture_hover = ExtResource("5_si05j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="lvl5Btn" unique_id=485106869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_tnejx")
+theme_override_font_sizes/font_size = 48
+text = "05"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backBtn" type="TextureButton" parent="." unique_id=1288367130]
 layout_mode = 0
-offset_left = 1379.0
-offset_top = 295.0
-offset_right = 1523.0
-offset_bottom = 439.0
+offset_right = 93.0
+offset_bottom = 93.0
+texture_normal = ExtResource("10_tnejx")
+texture_hover = ExtResource("11_vcux0")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="mouse_entered" from="lvl1Btn" to="." method="_on_lvl_1_btn_mouse_entered"]
 [connection signal="mouse_exited" from="lvl1Btn" to="." method="_on_lvl_1_btn_mouse_exited"]
@@ -68,3 +208,13 @@ offset_bottom = 439.0
 [connection signal="mouse_entered" from="lvl2Btn" to="." method="_on_lvl_2_btn_mouse_entered"]
 [connection signal="mouse_exited" from="lvl2Btn" to="." method="_on_lvl_2_btn_mouse_exited"]
 [connection signal="pressed" from="lvl2Btn" to="." method="_on_lvl_2_btn_pressed"]
+[connection signal="mouse_entered" from="lvl3Btn" to="." method="_on_lvl_3_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl3Btn" to="." method="_on_lvl_3_btn_mouse_exited"]
+[connection signal="pressed" from="lvl3Btn" to="." method="_on_lvl_3_btn_pressed"]
+[connection signal="mouse_entered" from="lvl4Btn" to="." method="_on_lvl_4_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl4Btn" to="." method="_on_lvl_4_btn_mouse_exited"]
+[connection signal="pressed" from="lvl4Btn" to="." method="_on_lvl_4_btn_pressed"]
+[connection signal="mouse_entered" from="lvl5Btn" to="." method="_on_lvl_5_btn_mouse_entered"]
+[connection signal="mouse_exited" from="lvl5Btn" to="." method="_on_lvl_5_btn_mouse_exited"]
+[connection signal="pressed" from="lvl5Btn" to="." method="_on_lvl_5_btn_pressed"]
+[connection signal="pressed" from="backBtn" to="." method="_on_back_btn_pressed"]

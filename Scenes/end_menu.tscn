@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bse0idb57tyit"]
 
 [ext_resource type="Script" uid="uid://cg4g5gbbmwlhb" path="res://Scripts/end_menu.gd" id="1_wrsnd"]
-[ext_resource type="Texture2D" uid="uid://cm4sayxgsj61u" path="res://assets/GUI/endMenu/end-menu-won.png" id="2_rrpri"]
+[ext_resource type="Texture2D" uid="uid://53aa4gwn872p" path="res://assets/GUI/endMenu/end_menu_background_won.png" id="2_77tpm"]
+[ext_resource type="Texture2D" uid="uid://d24sr446uxugl" path="res://assets/GUI/mainMenu/main-menu-start-button-idle.png" id="2_e214x"]
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="3_e214x"]
-[ext_resource type="Texture2D" uid="uid://bm46k4t65rihx" path="res://assets/GUI/mainMenu/main-menu-button-idle.png" id="4_tx7ng"]
-[ext_resource type="Texture2D" uid="uid://dalkf88x0h0k7" path="res://assets/GUI/mainMenu/main-menu-button-hover.png" id="5_77tpm"]
+[ext_resource type="Texture2D" uid="uid://ckeh17mttn2kb" path="res://assets/GUI/mainMenu/main-menu-start-button-hover.png" id="4_e214x"]
+[ext_resource type="Texture2D" uid="uid://dyqs8fhrnbtw5" path="res://assets/GUI/endMenu/end_menu_star_uncompleted.png" id="6_fjfhw"]
 
 [node name="end_menu" type="Control" unique_id=1196709590]
 layout_mode = 3
@@ -32,13 +33,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -402.0
-offset_top = -201.0
-offset_right = 402.0
-offset_bottom = 201.0
+offset_top = -344.0
+offset_right = 383.0
+offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(160, 320)
-texture = ExtResource("2_rrpri")
+texture = ExtResource("2_77tpm")
 
 [node name="Label" type="Label" parent="TextureRect" unique_id=603441350]
 layout_mode = 1
@@ -47,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -332.0
-offset_top = -87.0
-offset_right = 333.0
-offset_bottom = -21.0
+offset_left = -330.5
+offset_top = -276.5
+offset_right = 334.5
+offset_bottom = -210.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_e214x")
@@ -72,8 +73,8 @@ offset_right = -52.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_tx7ng")
-texture_hover = ExtResource("5_77tpm")
+texture_normal = ExtResource("2_e214x")
+texture_hover = ExtResource("4_e214x")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -107,8 +108,8 @@ offset_right = 217.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_tx7ng")
-texture_hover = ExtResource("5_77tpm")
+texture_normal = ExtResource("2_e214x")
+texture_hover = ExtResource("4_e214x")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -128,6 +129,21 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_e214x")
 theme_override_font_sizes/font_size = 24
 text = "NEXT"
+
+[node name="star_1" type="Sprite2D" parent="." unique_id=38635194]
+position = Vector2(824.99994, 500)
+scale = Vector2(5.0000076, 5.0000076)
+texture = ExtResource("6_fjfhw")
+
+[node name="star_2" type="Sprite2D" parent="." unique_id=1813954730]
+position = Vector2(950, 500)
+scale = Vector2(5, 5)
+texture = ExtResource("6_fjfhw")
+
+[node name="star_3" type="Sprite2D" parent="." unique_id=362809268]
+position = Vector2(1075, 500)
+scale = Vector2(5, 5)
+texture = ExtResource("6_fjfhw")
 
 [connection signal="pressed" from="TextureRect/menuBtn" to="." method="_on_menu_btn_pressed"]
 [connection signal="pressed" from="TextureRect/nextBtn" to="." method="_on_next_btn_pressed"]

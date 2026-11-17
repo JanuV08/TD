@@ -9,6 +9,9 @@ var enemiesSpawned: int
 var levelWon: bool
 var lvl1Completed = false
 var lvl2Completed = false
+var lvl3Completed = false
+var lvl4Completed = false
+var lvl5Completed = false
 var nextBtnPressed = false
 var gold: int = 1000
 var turretLVL1_cost: int = 100

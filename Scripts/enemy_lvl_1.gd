@@ -12,6 +12,7 @@ var is_dead: bool = false
 @export var enemy_type: String = "lvl1"
 
 @export var max_hp: int = 20
+@export var speed: float = 450.0
 var current_hp: int
 
 func _ready() -> void:

@@ -13,6 +13,9 @@ var is_dead: bool = false
 
 @export var max_hp: int = 30
 var current_hp: int
+@export var max_hp: int = 10
+@export var speed: float = 300.0
+@onready var health_bar: ProgressBar = $CharacterBody2D/ProgressBar
 
 func _ready() -> void:
 	last_position = global_position
