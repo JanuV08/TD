@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dkvrwkmvg8h5a"]
+[gd_scene format=3 uid="uid://v3ugdskuxdyr"]
 
-[ext_resource type="Script" path="res://Scripts/turret_cannon.gd" id="1_iasbv"]
+[ext_resource type="Script" uid="uid://bj7uem2c5kjr7" path="res://Scripts/turret_cannon.gd" id="1_iasbv"]
 [ext_resource type="Texture2D" uid="uid://d0kwbcwmqfw8g" path="res://assets/Turrets/turret_bottom.png" id="2_fp1i7"]
 [ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="3_8nenh"]
 

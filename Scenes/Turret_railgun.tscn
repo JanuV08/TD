@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://c85gof25rnkbv"]
+[gd_scene format=3 uid="uid://d4l8g7rtymigb"]
 
-[ext_resource type="Script" path="res://Scripts/turret_railgun.gd" id="1_xswnr"]
+[ext_resource type="Script" uid="uid://cmkl16gwxik10" path="res://Scripts/turret_railgun.gd" id="1_xswnr"]
 [ext_resource type="Texture2D" uid="uid://d0kwbcwmqfw8g" path="res://assets/Turrets/turret_bottom.png" id="2_faqoq"]
-[ext_resource type="Texture2D" path="res://assets/Turrets/railgun_turret.png" id="3_loun1"]
+[ext_resource type="Texture2D" uid="uid://dd3k664t50mrr" path="res://assets/Turrets/railgun_turret.png" id="3_loun1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gviv"]
 radius = 1649.0682

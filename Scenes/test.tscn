@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://brpgnsqrtrxfu"]
+
+[ext_resource type="PackedScene" uid="uid://bgb8nttvy6i6i" path="res://Scenes/BuildingSlot.tscn" id="1_lc1oi"]
+
+[node name="Test" type="Node2D" unique_id=224202553]
+
+[node name="BuildingSlot" parent="." unique_id=432147401 instance=ExtResource("1_lc1oi")]
+position = Vector2(264, 303)
+
+[node name="BuildingSlot2" parent="." unique_id=2064011922 instance=ExtResource("1_lc1oi")]
+position = Vector2(420, 316)
+
+[node name="BuildingSlot3" parent="." unique_id=439961668 instance=ExtResource("1_lc1oi")]
+position = Vector2(500, 309)
