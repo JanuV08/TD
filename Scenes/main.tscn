@@ -10,16 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://n2kss3cacy76" path="res://assets/GUI/gameUI/game_start_hover.png" id="7_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://coxir4cy1wbyb" path="res://assets/Map/tileset_v0.png" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://dnkeg2l8obrw5" path="res://assets/GUI/gameUI/healthBar.png" id="9_hptm8"]
+[ext_resource type="PackedScene" uid="uid://bgb8nttvy6i6i" path="res://Scenes/BuildingSlot.tscn" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://bu3mv5bun4v5t" path="res://assets/GUI/gameUI/healthBar_progress.png" id="10_d1ilt"]
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="11_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://6lm2qv72j1s7" path="res://assets/GUI/gameUI/enemies_left_icon.png" id="12_6iyac"]
 [ext_resource type="Texture2D" uid="uid://cxksrnasgpnwa" path="res://assets/GUI/gameUI/gold_icon.png" id="13_fdnlq"]
-
-[sub_resource type="Curve2D" id="Curve2D_ig7tw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 9, 395, 0, 0, 0, 0, 801, 394, 0, 0, 0, 0, 795, 9, 0, 0, 0, 0, 1428, 8, 0, 0, 0, 0, 1426, 826)
-}
-point_count = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1n30v"]
 texture = ExtResource("8_344ge")

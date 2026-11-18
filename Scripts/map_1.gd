@@ -72,6 +72,7 @@ func reset(lvl,enemyCount,hp) -> void:
 	Global.enemiesSpawned = enemyCount
 	Global.enemiesKilled = 0
 	Global.health = hp
+	Global.gold = 1000
 	
 func _on_back_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

@@ -11,7 +11,7 @@ var is_dead: bool = false
 @export var damage_to_base : int = 5
 @export var enemy_type: String = "lvl1"
 
-@export var max_hp: int = 20
+@export var max_hp: int = 5
 @export var speed: float = 450.0
 var current_hp: int
 
@@ -62,8 +62,10 @@ func die() -> void:
 		$CharacterBody2D/CollisionShape2D.set_deferred("disabled", true)
 	
 	# Schováme robota a healthbar
-	animated_sprite.visible = false
-	health_bar.visible = false
+	if is_instance_valid(animated_sprite):
+		animated_sprite.visible = false
+	if is_instance_valid(health_bar):
+		health_bar.visible = false
 	modulate = Color(1, 1, 1)
 	
 	# Odpálíme jiskry a po dohrání smažeme

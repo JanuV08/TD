@@ -7,9 +7,7 @@ var path_script: Script = preload("res://Scripts/path_follow_2d.gd")
 
 func _process(_delta: float) -> void:
 	$enemiesLeft.text = "1".repeat(max(0, 2 - Global.enemiesKilled))
-	$gold.text = "100" #str(Global.gold)
-	
-	
+	$gold.text = str(Global.gold)
 	$HP.text = str(Global.health) + " / 100"
 	$HealthBar.value = Global.health
 	if Global.health <= (Global.health * 0.3):
