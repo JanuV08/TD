@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/MidnightLetters-Regular.ttf-03ac3210d480cdea5
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

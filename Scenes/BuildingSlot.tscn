@@ -83,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahiqj"]
-size = Vector2(68, 68)
+size = Vector2(32, 32)
 
 [node name="BuildingSlot" type="Node2D" unique_id=432147401]
 
@@ -92,7 +92,6 @@ script = ExtResource("1_ahiqj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=612949822]
 texture_filter = 1
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3e2se")
 animation = &"occupied"
 

@@ -37,6 +37,7 @@ func _on_next_btn_pressed() -> void:
 	Global.enemyCount = 0
 	Global.enemiesKilled = 0   
 	Global.enemiesSpawned = 0   
+	Global.gold = 1000
 
 func _on_menu_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

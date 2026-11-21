@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gixx4rv0dra0" path="res://assets/Enemy/mid_mob_v1.png" id="2_66myw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
-radius = 58.0
+radius = 39.012817
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gybor"]
 atlas = ExtResource("2_66myw")
@@ -120,7 +120,7 @@ script = ExtResource("1_ulxxd")
 shape = SubResource("CircleShape2D_he84e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1000586283]
-scale = Vector2(2, 2)
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_gybor")
 animation = &"walk_side"
 
@@ -129,9 +129,9 @@ anchors_preset = -1
 anchor_right = 0.0062499046
 anchor_bottom = 0.0009191036
 offset_left = -33.0
-offset_top = -81.0
+offset_top = -55.0
 offset_right = 35.0
-offset_bottom = -71.0
+offset_bottom = -45.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_66myw")
 step = 1.0
 rounded = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dth61ycpvvx1i"
-path="res://.godot/imported/budovyZem.png-a459a77c8691464ab4ce440fd547de30.ctex"
+path="res://.godot/imported/budovyZem.png-fdc09604003b366f8e868c16ea041c6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Map/Michal/budovyZem.png"
-dest_files=["res://.godot/imported/budovyZem.png-a459a77c8691464ab4ce440fd547de30.ctex"]
+source_file="res://assets/Map/budovyZem.png"
+dest_files=["res://.godot/imported/budovyZem.png-fdc09604003b366f8e868c16ea041c6c.ctex"]
 
 [params]
 

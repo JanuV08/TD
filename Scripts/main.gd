@@ -44,7 +44,9 @@ func levelSpawn() -> void:
 		1: 
 			spawn(LVL1)
 			await wait(0.5)
-			spawn(LVL1)
+			spawn(LVL2)
+			await wait(0.5)
+			spawn(LVL3)
 			
 		2:
 			spawn(LVL1)

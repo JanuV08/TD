@@ -13,7 +13,7 @@ var is_dead: bool = false
 
 @export var max_hp: int = 50
 var current_hp: int
-@export var speed: float = 200.0
+@export var speed: float = 100.0
 
 func _ready() -> void:
 	last_position = global_position
@@ -36,12 +36,12 @@ func take_damage(amount: int) -> void:
 		return
 		
 	current_hp -= amount
-	print("HP nepřítele ", name, " kleslo na: ", current_hp)
 	
 	if is_instance_valid(health_bar):
 		health_bar.value = current_hp
 		
 	if current_hp <= 0:
+		Global.gold += 100
 		die()
 		return
 		

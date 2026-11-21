@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbgfji5vjng6u"
-path="res://.godot/imported/bg7.png-60de7dea7a4ac710e3fdac1653953608.ctex"
+path="res://.godot/imported/bg7.png-7450e046b48c9eb55a50e35531d404e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Map/Michal/bg7.png"
-dest_files=["res://.godot/imported/bg7.png-60de7dea7a4ac710e3fdac1653953608.ctex"]
+source_file="res://assets/Map/bg7.png"
+dest_files=["res://.godot/imported/bg7.png-7450e046b48c9eb55a50e35531d404e7.ctex"]
 
 [params]
 

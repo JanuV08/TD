@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d15yiibc24jxu"
-path="res://.godot/imported/bloky32_v2.png-311618ea8682799f238ff70ffe796bec.ctex"
+path="res://.godot/imported/bloky32_v2.png-5f5f69ed1042ba9da1a5c4eeac5755d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Map/Vojta/bloky32_v2.png"
-dest_files=["res://.godot/imported/bloky32_v2.png-311618ea8682799f238ff70ffe796bec.ctex"]
+source_file="res://assets/Map/novy/bloky32_v2.png"
+dest_files=["res://.godot/imported/bloky32_v2.png-5f5f69ed1042ba9da1a5c4eeac5755d5.ctex"]
 
 [params]
 
