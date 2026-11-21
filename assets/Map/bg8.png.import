@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xo5lmjurhybq"
-path="res://.godot/imported/bg8.png-656a7018b606f240e89ce37d145fbb13.ctex"
+path="res://.godot/imported/bg8.png-edd80f5224395702a3dd31f0ffaf99bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Map/bg8.png"
-dest_files=["res://.godot/imported/bg8.png-656a7018b606f240e89ce37d145fbb13.ctex"]
+source_file="res://assets/Map/Michal/bg8.png"
+dest_files=["res://.godot/imported/bg8.png-edd80f5224395702a3dd31f0ffaf99bd.ctex"]
 
 [params]
 
