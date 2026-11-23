@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://6lm2qv72j1s7" path="res://assets/GUI/gameUI/enemies_left_icon.png" id="12_6iyac"]
 [ext_resource type="Texture2D" uid="uid://cxksrnasgpnwa" path="res://assets/GUI/gameUI/gold_icon.png" id="13_fdnlq"]
 [ext_resource type="Shader" uid="uid://gcq8y13phgum" path="res://Scenes/main_menu_blur.gdshader" id="15_wsu2k"]
+[ext_resource type="AudioStream" uid="uid://dqmduyqjbe8t8" path="res://assets/Sounds/game_loop.wav" id="16_k12tt"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -128,6 +129,10 @@ theme_override_fonts/font = ExtResource("11_d1ilt")
 theme_override_font_sizes/font_size = 32
 text = "100"
 horizontal_alignment = 2
+
+[node name="game_loop" type="AudioStreamPlayer" parent="." unique_id=724153625]
+stream = ExtResource("16_k12tt")
+autoplay = true
 
 [connection signal="body_entered" from="Konec" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="waveButton" to="." method="_on_button_pressed"]

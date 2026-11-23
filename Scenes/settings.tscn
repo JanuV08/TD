@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c6qnklux3wn7"]
+
+[ext_resource type="Texture2D" uid="uid://53aa4gwn872p" path="res://assets/GUI/endMenu/end_menu_background_won.png" id="1_i44u3"]
+[ext_resource type="Script" uid="uid://cu1i8mfu58d86" path="res://Scripts/settings.gd" id="1_lhmql"]
+[ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="2_lhmql"]
+
+[node name="settings" type="Control" unique_id=703400629]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhmql")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2132349209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1610434915]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.5
+offset_top = -392.5
+offset_right = 392.5
+offset_bottom = 392.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 320)
+texture = ExtResource("1_i44u3")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=508304816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.5
+offset_top = -276.5
+offset_right = 334.5
+offset_bottom = -210.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lhmql")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="ColorRect/TextureRect" unique_id=995130524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -8.0
+offset_right = 171.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect/HSlider" unique_id=49196795]
+layout_mode = 0
+offset_left = -65.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 19.0
+text = "100.0 %"
+
+[connection signal="value_changed" from="ColorRect/TextureRect/HSlider" to="." method="_on_h_slider_value_changed"]

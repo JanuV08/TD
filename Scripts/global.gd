@@ -17,3 +17,4 @@ var gold: int = 1000
 var turretLVL1_cost: int = 100
 var turretLVL2_cost: int = 250
 var turretLVL3_cost: int = 1000
+var volume: float = 1.0
