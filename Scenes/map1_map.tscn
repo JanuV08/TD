@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ck7krfqsasow2" path="res://assets/Map/novy/car2.png" id="6_677n0"]
 [ext_resource type="Texture2D" uid="uid://vwnlk32mj1cv" path="res://assets/Map/novy/car3.png" id="7_en4qu"]
 [ext_resource type="PackedScene" uid="uid://bgb8nttvy6i6i" path="res://Scenes/BuildingSlot.tscn" id="9_btoii"]
+[ext_resource type="Texture2D" uid="uid://ctjixr0l2o5mj" path="res://assets/Turrets/Railgun_tower.png" id="10_hwlb6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlugy"]
 texture = ExtResource("1_0ab5g")
@@ -3178,3 +3179,23 @@ position = Vector2(672.5, 271.5)
 
 [node name="BuildingSlot10" parent="foreground" unique_id=1091986262 instance=ExtResource("9_btoii")]
 position = Vector2(609, 336.5)
+
+[node name="Railgun_tower" type="Sprite2D" parent="foreground" unique_id=1069427254]
+position = Vector2(640, 119.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_hwlb6")
+
+[node name="Railgun_slot1" parent="foreground/Railgun_tower" unique_id=1296440759 instance=ExtResource("9_btoii")]
+z_index = 1
+position = Vector2(0, -13.5)
+scale = Vector2(0.6666667, 0.6666667)
+
+[node name="Railgun_tower2" type="Sprite2D" parent="foreground" unique_id=70291570]
+position = Vector2(718.5, 439.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_hwlb6")
+
+[node name="Railgun_slot2" parent="foreground/Railgun_tower2" unique_id=2108143118 instance=ExtResource("9_btoii")]
+z_index = 1
+position = Vector2(-2.002716e-05, -12.666696)
+scale = Vector2(0.6666667, 0.6666667)

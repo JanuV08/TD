@@ -20,6 +20,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 336.0
 offset_bottom = 158.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_p3dkr")
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=1889112696]
