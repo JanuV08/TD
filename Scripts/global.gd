@@ -1,6 +1,6 @@
 extends Node
 
-var health: int = 100
+var health: int = 5
 var enemyCount: int = 1
 var wave: int = 1
 var level: int

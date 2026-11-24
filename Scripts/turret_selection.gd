@@ -48,7 +48,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				
 				selection_menu_instance.show()
 		else:
-			print("Blok je obsazen!")
+			if current_turret:
+				current_turret.toggle_range()
 
 func _on_turret_selected(turret_type: int):
 	spawn_turret(turret_type)

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ckvyh562dhr42"]
+
+[ext_resource type="AudioStream" uid="uid://bmydahl58yp2a" path="res://assets/Sounds/game_loop_chill.wav" id="1_fbmny"]
+[ext_resource type="Script" uid="uid://gxj2xbjwnrbg" path="res://Scripts/music.gd" id="1_qxpp0"]
+
+[node name="Music" type="Node2D" unique_id=1130140921]
+script = ExtResource("1_qxpp0")
+
+[node name="lobby_music" type="AudioStreamPlayer" parent="." unique_id=830063001]
+stream = ExtResource("1_fbmny")

@@ -27,6 +27,7 @@ const ABORT_HORIZON = Color("#ffa3d7")
 var bg_tween: Tween
 
 func _ready() -> void:
+	Music.play_music(preload("res://assets/Sounds/game_loop_chill.wav"))
 	playBtn.pivot_offset = playBtn.size / 2
 	quitBtn.pivot_offset = quitBtn.size / 2
 	settBtn.pivot_offset = settBtn.size / 2
@@ -82,8 +83,3 @@ func _on_sett_btn_mouse_entered() -> void:
 	settBtn.scale = Vector2(1.1, 1.1)
 func _on_sett_btn_mouse_exited() -> void:
 	settBtn.scale = Vector2(1.0,1.0)
-
-
-func _on_intro_music_finished() -> void:
-	await get_tree().create_timer(0.5).timeout
-	$lobby_music.play()

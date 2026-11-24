@@ -15,7 +15,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _ready() -> void:
-	
 	lvl1Btn.pivot_offset = lvl1Btn.size / 2
 	lvl2Btn.pivot_offset = lvl2Btn.size / 2
 	lvl3Btn.pivot_offset = lvl3Btn.size / 2
@@ -82,7 +81,7 @@ func _on_back_btn_pressed() -> void:
 #Button for level 1
 func _on_lvl_1_btn_pressed() -> void:
 	$button_click.play()
-	reset(1,2,100)
+	reset(1,2,5)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_1_btn_mouse_entered() -> void:
 	lvl1Btn.scale = Vector2(1.1,1.1)
@@ -93,7 +92,7 @@ func _on_lvl_1_btn_mouse_exited() -> void:
 #Button for level2
 func _on_lvl_2_btn_pressed() -> void:
 	$button_click.play()
-	reset(2,2,100)
+	reset(2,2,4)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_2_btn_mouse_entered() -> void:
 	lvl2Btn.scale = Vector2(1.1,1.1)
@@ -104,7 +103,7 @@ func _on_lvl_2_btn_mouse_exited() -> void:
 
 func _on_lvl_3_btn_pressed() -> void:
 	$button_click.play()
-	reset(3,2,100)
+	reset(3,2,3)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_3_btn_mouse_entered() -> void:
 	lvl3Btn.scale = Vector2(1.1,1.1)
@@ -114,7 +113,7 @@ func _on_lvl_3_btn_mouse_exited() -> void:
 
 func _on_lvl_4_btn_pressed() -> void:
 	$button_click.play()
-	reset(4,2,100)
+	reset(4,2,2)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_4_btn_mouse_entered() -> void:
 	lvl4Btn.scale = Vector2(1.1,1.1)
@@ -124,7 +123,7 @@ func _on_lvl_4_btn_mouse_exited() -> void:
 
 func _on_lvl_5_btn_pressed() -> void:
 	$button_click.play()
-	reset(5,2,100)
+	reset(5,2,1)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 func _on_lvl_5_btn_mouse_entered() -> void:
 	lvl5Btn.scale = Vector2(1.1,1.1)
