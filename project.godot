@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Global="*uid://d54yef0b67vo"
+Music="*uid://ckvyh562dhr42"
 
 [display]
 

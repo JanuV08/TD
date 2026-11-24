@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var damage_timer: Timer = $DamageTimer
+@onready var range_shape: CollisionShape2D = $range_Area2D/CollisionShape2D
 
 var target: Node2D = null
 @export var damage_amount: int = 5
@@ -73,3 +74,28 @@ func _on_damage_timer_timeout() -> void:
 				target.queue_free()
 	else:
 		find_target()
+
+
+
+var show_range: bool = false
+
+func toggle_range() -> void:
+	show_range = not show_range
+	queue_redraw()
+
+func _draw() -> void:
+	if not show_range or not range_shape:
+		return
+	
+	var circle := range_shape.shape as CircleShape2D
+	if circle:
+		# Poloprůhledná azurová výplň + ostrý neonový obrys
+		draw_circle(Vector2.ZERO, circle.radius, Color(0.0, 0.9, 1.0, 0.12))
+		draw_arc(Vector2.ZERO, circle.radius, 0, TAU, 64, Color(0.0, 0.9, 1.0, 0.85), 2.0)
+
+# Automatické skrytí dosahu při kliknutí kamkoliv mimo tuto věž (nebo na jinou věž)
+func _unhandled_input(event: InputEvent) -> void:
+	if show_range and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if global_position.distance_to(get_global_mouse_position()) > 32.0:
+			show_range = false
+			queue_redraw()

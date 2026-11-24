@@ -8,16 +8,19 @@ var current_turret = null
 @export var turret_railgun_scene: PackedScene = preload("res://Scenes/Turret_railgun.tscn")
 @export var selection_menu_scene: PackedScene = preload("res://Scenes/TurretMenu.tscn")
 
+
 var selection_menu_instance = null
 
 func _ready():
 	$AnimatedSprite2D.play("default")
+	
 
 	if selection_menu_scene:
 		selection_menu_instance = selection_menu_scene.instantiate()
 		add_child(selection_menu_instance)
 		selection_menu_instance.turret_selected.connect(_on_turret_selected)
-		
+		var is_railgun_only: bool = name.begins_with("Railgun") or get_parent().name.begins_with("Railgun")
+		selection_menu_instance.setup_for_slot(is_railgun_only)
 
 	
 
@@ -35,9 +38,18 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if not is_occupied:
 			if selection_menu_instance:
+				var screen_center_x: float = get_viewport_rect().size.x / 2.0
+				var menu_width: float = selection_menu_instance.get_node("TextureRect").size.x
+				
+				if global_position.x > screen_center_x:
+					selection_menu_instance.position.x = -menu_width + 180
+				else:
+					selection_menu_instance.position.x = 0.0
+				
 				selection_menu_instance.show()
 		else:
-			print("Blok je obsazen!")
+			if current_turret:
+				current_turret.toggle_range()
 
 func _on_turret_selected(turret_type: int):
 	spawn_turret(turret_type)

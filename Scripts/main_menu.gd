@@ -1,10 +1,12 @@
 extends Control
 @onready var playBtn: TextureButton = $playBtn
 @onready var quitBtn: TextureButton = $quitBtn
+@onready var settBtn: TextureButton = $settBtn
 const LEVEL_SCENE_PATH: String = "res://Scenes/map1.tscn"
 
 @export var bg_rect: ColorRect
 @export var btn_initiate: BaseButton
+@export var btn_settings: BaseButton
 @export var btn_abort: BaseButton
 
 # Výchozí modrá paleta
@@ -25,11 +27,17 @@ const ABORT_HORIZON = Color("#ffa3d7")
 var bg_tween: Tween
 
 func _ready() -> void:
+	Music.play_music(preload("res://assets/Sounds/game_loop_chill.wav"))
 	playBtn.pivot_offset = playBtn.size / 2
 	quitBtn.pivot_offset = quitBtn.size / 2
+	settBtn.pivot_offset = settBtn.size / 2
 	if btn_initiate:
 		btn_initiate.mouse_entered.connect(_change_bg_colors.bind(INITIATE_TOP, INITIATE_GRID, INITIATE_HORIZON))
 		btn_initiate.mouse_exited.connect(_change_bg_colors.bind(DEFAULT_TOP, DEFAULT_GRID, DEFAULT_HORIZON))
+	
+	if btn_settings:
+		btn_settings.mouse_entered.connect(_change_bg_colors.bind(INITIATE_TOP, INITIATE_GRID, INITIATE_HORIZON))
+		btn_settings.mouse_exited.connect(_change_bg_colors.bind(DEFAULT_TOP, DEFAULT_GRID, DEFAULT_HORIZON))
 	
 	if btn_abort:
 		btn_abort.mouse_entered.connect(_change_bg_colors.bind(ABORT_TOP, ABORT_GRID, ABORT_HORIZON))
@@ -47,6 +55,7 @@ func _change_bg_colors(top: Color, grid: Color, horizon: Color) -> void:
 	bg_tween.tween_property(bg_rect.material, "shader_parameter/horizon_color", horizon, 0.25)
 
 func _on_play_btn_pressed() -> void:
+	$button_click.play()
 	get_tree().change_scene_to_file(LEVEL_SCENE_PATH)
 
 func _on_play_btn_mouse_entered() -> void:
@@ -62,4 +71,15 @@ func _on_quit_btn_mouse_exited() -> void:
 	quitBtn.scale = Vector2(1.0,1.0)
 
 func _on_quit_btn_pressed() -> void:
+	$button_click.play()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().quit()
+
+
+func _on_sett_btn_pressed() -> void:
+	$settings.visible = true
+
+func _on_sett_btn_mouse_entered() -> void:
+	settBtn.scale = Vector2(1.1, 1.1)
+func _on_sett_btn_mouse_exited() -> void:
+	settBtn.scale = Vector2(1.0,1.0)

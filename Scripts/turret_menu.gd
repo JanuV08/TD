@@ -4,6 +4,7 @@ extends Control
 @onready var tesla_btn: TextureButton = $TextureRect/TextureButton2
 @onready var railgun_btn: TextureButton = $TextureRect/TextureButton3
 
+
 signal turret_selected(turret_type: int)
 
 func _ready():
@@ -55,3 +56,22 @@ func _on_texture_button_3_mouse_entered() -> void:
 	railgun_btn.scale = Vector2(1.1, 1.1)
 func _on_texture_button_3_mouse_exited() -> void:
 	railgun_btn.scale = Vector2(1.0, 1.0)
+	
+func setup_for_slot(is_railgun_slot: bool) -> void:
+	if is_railgun_slot:
+		_set_button_locked(cannon_btn, true)
+		_set_button_locked(tesla_btn, true)
+		_set_button_locked(railgun_btn, false)
+	else:
+		_set_button_locked(cannon_btn, false)
+		_set_button_locked(tesla_btn, false)
+		_set_button_locked(railgun_btn, true)
+
+func _set_button_locked(btn: TextureButton, locked: bool) -> void:
+	if btn == null:
+		return
+	btn.disabled = locked
+	if locked:
+		btn.modulate = Color(0.35, 0.35, 0.35, 0.6)
+	else:
+		btn.modulate = Color(1.0, 1.0, 1.0, 1.0)

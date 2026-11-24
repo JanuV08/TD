@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://c2edt1vtldka5" path="res://assets/fonts/midnight-letters.italic.ttf" id="3_e214x"]
 [ext_resource type="Texture2D" uid="uid://ckeh17mttn2kb" path="res://assets/GUI/mainMenu/main-menu-start-button-hover.png" id="4_e214x"]
 [ext_resource type="Texture2D" uid="uid://dyqs8fhrnbtw5" path="res://assets/GUI/endMenu/end_menu_star_uncompleted.png" id="6_fjfhw"]
+[ext_resource type="AudioStream" uid="uid://behdrbqydx85n" path="res://assets/Sounds/victory.wav" id="7_vp12d"]
+[ext_resource type="AudioStream" uid="uid://btlgq02xderxv" path="res://assets/Sounds/defeat.wav" id="8_stov7"]
 
 [node name="end_menu" type="Control" unique_id=1196709590]
 layout_mode = 3
@@ -17,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_wrsnd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=55386379]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +29,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=964539029]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,6 +45,21 @@ grow_vertical = 2
 pivot_offset = Vector2(160, 320)
 texture = ExtResource("2_77tpm")
 
+[node name="star_1" type="Sprite2D" parent="TextureRect" unique_id=38635194]
+position = Vector2(266.99994, 304)
+scale = Vector2(5.0000076, 5.0000076)
+texture = ExtResource("6_fjfhw")
+
+[node name="star_2" type="Sprite2D" parent="TextureRect" unique_id=1813954730]
+position = Vector2(392, 304)
+scale = Vector2(5, 5)
+texture = ExtResource("6_fjfhw")
+
+[node name="star_3" type="Sprite2D" parent="TextureRect" unique_id=362809268]
+position = Vector2(517, 304)
+scale = Vector2(5, 5)
+texture = ExtResource("6_fjfhw")
+
 [node name="Label" type="Label" parent="TextureRect" unique_id=603441350]
 layout_mode = 1
 anchors_preset = 8
@@ -55,7 +74,7 @@ offset_bottom = -210.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_e214x")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "SECTOR CLEARED"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -130,20 +149,11 @@ theme_override_fonts/font = ExtResource("3_e214x")
 theme_override_font_sizes/font_size = 24
 text = "NEXT"
 
-[node name="star_1" type="Sprite2D" parent="." unique_id=38635194]
-position = Vector2(824.99994, 500)
-scale = Vector2(5.0000076, 5.0000076)
-texture = ExtResource("6_fjfhw")
+[node name="levelWon" type="AudioStreamPlayer" parent="." unique_id=830320220]
+stream = ExtResource("7_vp12d")
 
-[node name="star_2" type="Sprite2D" parent="." unique_id=1813954730]
-position = Vector2(950, 500)
-scale = Vector2(5, 5)
-texture = ExtResource("6_fjfhw")
-
-[node name="star_3" type="Sprite2D" parent="." unique_id=362809268]
-position = Vector2(1075, 500)
-scale = Vector2(5, 5)
-texture = ExtResource("6_fjfhw")
+[node name="levelLost" type="AudioStreamPlayer" parent="." unique_id=1261370653]
+stream = ExtResource("8_stov7")
 
 [connection signal="pressed" from="TextureRect/menuBtn" to="." method="_on_menu_btn_pressed"]
 [connection signal="pressed" from="TextureRect/nextBtn" to="." method="_on_next_btn_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b0nvxq70y1t5d"]
+
+[sub_resource type="Gradient" id="Gradient_he84e"]
+offsets = PackedFloat32Array(0.12962963, 0.7407407, 1)
+colors = PackedColorArray(0.33522728, 0.33522728, 0.33522728, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_4kgei"]
+colors = PackedColorArray(1, 0, 0.49803922, 1, 0, 0.7058824, 0.84705883, 1)
+
+[node name="vybuch_budovy" type="CPUParticles2D" unique_id=1044336320]
+emitting = false
+amount = 90
+lifetime = 0.9
+one_shot = true
+explosiveness = 0.95
+emission_shape = 1
+emission_sphere_radius = 18.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 240.0
+damping_min = 80.0
+damping_max = 120.0
+scale_amount_min = 6.0
+scale_amount_max = 16.0
+color_ramp = SubResource("Gradient_he84e")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1252411581]
+emitting = false
+amount = 35
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.95
+emission_shape = 1
+emission_sphere_radius = 18.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 320.0
+damping_min = 80.0
+damping_max = 120.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_4kgei")
