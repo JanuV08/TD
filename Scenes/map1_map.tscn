@@ -3170,39 +3170,51 @@ rotation = 1.5707964
 texture = ExtResource("6_677n0")
 
 [node name="BuildingSlot" parent="foreground" unique_id=432147401 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(352, 176.5)
 
 [node name="BuildingSlot2" parent="foreground" unique_id=1090226091 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(416, 176.5)
 
 [node name="BuildingSlot3" parent="foreground" unique_id=641555448 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(416.5, 240)
 
 [node name="BuildingSlot4" parent="foreground" unique_id=1462666590 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(351.5, 240.5)
 
 [node name="BuildingSlot5" parent="foreground" unique_id=1649799560 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(352, 336)
 
 [node name="BuildingSlot12" parent="foreground" unique_id=1066198899 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(256, 432)
 
 [node name="BuildingSlot6" parent="foreground" unique_id=659100520 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(416.5, 336.5)
 
 [node name="BuildingSlot7" parent="foreground" unique_id=191804288 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(512, 336)
 
 [node name="BuildingSlot8" parent="foreground" unique_id=500030866 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(512.5, 271)
 
 [node name="BuildingSlot9" parent="foreground" unique_id=384327035 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(608.5, 272.5)
 
 [node name="BuildingSlot11" parent="foreground" unique_id=1270140401 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(672.5, 271.5)
 
 [node name="BuildingSlot10" parent="foreground" unique_id=1091986262 instance=ExtResource("9_btoii")]
+process_mode = 3
 position = Vector2(609, 336.5)
 
 [node name="Railgun_tower" type="Sprite2D" parent="foreground" unique_id=1069427254]
@@ -3211,6 +3223,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_hwlb6")
 
 [node name="Railgun_slot1" parent="foreground/Railgun_tower" unique_id=1296440759 instance=ExtResource("9_btoii")]
+process_mode = 3
 z_index = 1
 position = Vector2(0, -13.5)
 scale = Vector2(0.6666667, 0.6666667)
@@ -3221,6 +3234,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_hwlb6")
 
 [node name="Railgun_slot2" parent="foreground/Railgun_tower2" unique_id=2108143118 instance=ExtResource("9_btoii")]
+process_mode = 3
 z_index = 1
 position = Vector2(-2.002716e-05, -12.666696)
 scale = Vector2(0.6666667, 0.6666667)
