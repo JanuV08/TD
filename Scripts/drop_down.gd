@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var background: TextureRect = $TextureRect
 
 func _ready() -> void:
-	# DŮLEŽITÉ: celý CanvasLayer i všechna jeho tlačítka budou fungovat i při pauze
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	exit_btn.pivot_offset = exit_btn.size / 2
@@ -32,6 +31,10 @@ func _on_sett_btn_mouse_exited() -> void:
 	settings_btn.scale = Vector2(1.0, 1.0)
 
 func _on_exit_btn_pressed() -> void:
-	# NUTNÉ: zrušíme pauzu před přepnutím do hlavního menu, jinak menu zamrzne!
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_sett_btn_pressed() -> void:
+	$settings.visible = true
+	$TextureRect.visible = false
