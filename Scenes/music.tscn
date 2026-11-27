@@ -2,9 +2,18 @@
 
 [ext_resource type="AudioStream" uid="uid://bmydahl58yp2a" path="res://assets/Sounds/game_loop_chill.wav" id="1_fbmny"]
 [ext_resource type="Script" uid="uid://gxj2xbjwnrbg" path="res://Scripts/music.gd" id="1_qxpp0"]
+[ext_resource type="AudioStream" uid="uid://dkb1c220omkdf" path="res://assets/Sounds/nove_zvuky/button_click.wav" id="3_476t3"]
+[ext_resource type="AudioStream" uid="uid://f5nmdxnwxmqg" path="res://assets/Sounds/nove_zvuky/turret_place.wav" id="4_vi5kw"]
 
 [node name="Music" type="Node2D" unique_id=1130140921]
 script = ExtResource("1_qxpp0")
 
 [node name="lobby_music" type="AudioStreamPlayer" parent="." unique_id=830063001]
 stream = ExtResource("1_fbmny")
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=833676428]
+stream = ExtResource("3_476t3")
+max_polyphony = 8
+
+[node name="BuildSound" type="AudioStreamPlayer" parent="." unique_id=1269332359]
+stream = ExtResource("4_vi5kw")

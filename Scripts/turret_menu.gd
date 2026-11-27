@@ -14,25 +14,32 @@ func _ready():
 	railgun_btn.pivot_offset = railgun_btn.size / 2
 
 func _on_button_1_pressed():
+	Music.play_click()
 	if Global.gold >= Global.turretLVL1_cost:
 		turret_selected.emit(1)
 		Global.gold -= Global.turretLVL1_cost
+		Music.play_build()
 	else:
 		print("Nein")
 	hide()
 
 func _on_button_2_pressed():
+	Music.play_click()
+
 	if Global.gold >= Global.turretLVL2_cost:
 		turret_selected.emit(2)
 		Global.gold -= Global.turretLVL2_cost
+		Music.play_build()
 	else:
 		print("Nein")
 	hide()
 
 func _on_button_3_pressed():
+	Music.play_click()
 	if Global.gold >= Global.turretLVL3_cost:
 		turret_selected.emit(3)
 		Global.gold -= Global.turretLVL3_cost
+		Music.play_build()
 	else:
 		print("Nein")
 	hide()

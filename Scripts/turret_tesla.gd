@@ -65,6 +65,7 @@ func _on_damage_timer_timeout() -> void:
 					enemy.queue_free()
 
 func _spawn_lightning(target_pos: Vector2) -> void:
+	$fire.play()
 	var outer_bolt = Line2D.new()
 	outer_bolt.width = 3.0
 	outer_bolt.default_color = Color(0.2, 1.8, 3.0, 1.0)

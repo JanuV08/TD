@@ -56,6 +56,7 @@ func _on_range_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_damage_timer_timeout() -> void:
 	if is_instance_valid(target):
+		$fire.play()
 		# --- NOVÉ: Vystřelení vizuálního náboje ---
 		if bullet_scene != null:
 			var bullet = bullet_scene.instantiate()

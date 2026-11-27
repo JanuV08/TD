@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tv7h2dpru12m" path="res://Scripts/enemy_lvl_3.gd" id="1_ulxxd"]
 [ext_resource type="Texture2D" uid="uid://gixx4rv0dra0" path="res://assets/Enemy/mid_mob_v1.png" id="2_66myw"]
+[ext_resource type="AudioStream" uid="uid://bjn4ewdjqb6j8" path="res://assets/Sounds/nove_zvuky/hit_03.wav" id="3_gybor"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
 radius = 39.012817
@@ -150,3 +151,7 @@ initial_velocity_max = 140.0
 scale_amount_min = 3.0
 scale_amount_max = 5.0
 color = Color(1, 0, 0.49803922, 1)
+
+[node name="hit" type="AudioStreamPlayer" parent="CharacterBody2D" unique_id=466935127]
+stream = ExtResource("3_gybor")
+volume_db = -20.0

@@ -61,6 +61,7 @@ func znic(budova) -> void:
 	if not budova.visible or budova.scale != Vector2.ONE:
 		return
 
+	$mapa/vybuchSound.play()
 	var vybuch = VYBUCH.instantiate()
 	vybuch.global_position = budova.global_position
 	vybuch.z_index = 10
@@ -150,8 +151,10 @@ func _on_button_pressed() -> void:
 
 func _update_wave_button() -> void:
 	if not wave_running or is_paused:
+		Music.play_click()
 		$waveButton.texture_normal = play_idle
 		$waveButton.texture_hover = play_hover
 	else:
+		Music.play_click()
 		$waveButton.texture_normal = pause_idle
 		$waveButton.texture_hover = pause_hover

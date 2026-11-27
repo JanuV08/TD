@@ -55,7 +55,7 @@ func _change_bg_colors(top: Color, grid: Color, horizon: Color) -> void:
 	bg_tween.tween_property(bg_rect.material, "shader_parameter/horizon_color", horizon, 0.25)
 
 func _on_play_btn_pressed() -> void:
-	$button_click.play()
+	Music.play_click()
 	get_tree().change_scene_to_file(LEVEL_SCENE_PATH)
 
 func _on_play_btn_mouse_entered() -> void:
@@ -71,12 +71,13 @@ func _on_quit_btn_mouse_exited() -> void:
 	quitBtn.scale = Vector2(1.0,1.0)
 
 func _on_quit_btn_pressed() -> void:
-	$button_click.play()
+	Music.play_click()
 	await get_tree().create_timer(0.1).timeout
 	get_tree().quit()
 
 
 func _on_sett_btn_pressed() -> void:
+	Music.play_click()
 	$settings.visible = true
 
 func _on_sett_btn_mouse_entered() -> void:

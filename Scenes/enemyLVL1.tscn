@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b365l03knl0bj" path="res://Scripts/enemy_lvl_1.gd" id="1_q1jqe"]
 [ext_resource type="Texture2D" uid="uid://0fpwb0qib6c2" path="res://assets/Enemy/drone_mob.png" id="2_q1jqe"]
+[ext_resource type="AudioStream" uid="uid://cpin620bvnqdm" path="res://assets/Sounds/nove_zvuky/hit_02.wav" id="3_r33bo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yhj6x"]
 radius = 28.01785
@@ -148,3 +149,7 @@ initial_velocity_max = 140.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
 color = Color(1, 0, 0.49803922, 1)
+
+[node name="hit" type="AudioStreamPlayer" parent="CharacterBody2D" unique_id=1308003371]
+stream = ExtResource("3_r33bo")
+volume_db = -20.0

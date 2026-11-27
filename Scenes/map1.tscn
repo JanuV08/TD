@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dsi6vurhcs0aa" path="res://assets/GUI/levelSelect/level-select-idle.png" id="4_tnejx"]
 [ext_resource type="Texture2D" uid="uid://4uk60i0h83oe" path="res://assets/GUI/levelSelect/level-select-hover.png" id="5_si05j"]
 [ext_resource type="FontFile" uid="uid://ch5qx16xhvfbv" path="res://assets/fonts/MidnightLetters-Regular.ttf" id="7_tnejx"]
-[ext_resource type="AudioStream" uid="uid://s7ud3mstb4bq" path="res://assets/Sounds/button_click.wav" id="9_jemul"]
 [ext_resource type="Texture2D" uid="uid://omvl51mbbp8f" path="res://assets/GUI/gameUI/back_button-idle.png" id="10_tnejx"]
 [ext_resource type="Texture2D" uid="uid://crb2vqcwl83p7" path="res://assets/GUI/gameUI/back_button-hover.png" id="11_vcux0"]
 
@@ -204,9 +203,6 @@ texture_normal = ExtResource("10_tnejx")
 texture_hover = ExtResource("11_vcux0")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="button_click" type="AudioStreamPlayer" parent="." unique_id=453013067]
-stream = ExtResource("9_jemul")
 
 [connection signal="mouse_entered" from="lvl1Btn" to="." method="_on_lvl_1_btn_mouse_entered"]
 [connection signal="mouse_exited" from="lvl1Btn" to="." method="_on_lvl_1_btn_mouse_exited"]

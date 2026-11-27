@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bj7uem2c5kjr7" path="res://Scripts/turret_cannon.gd" id="1_iasbv"]
 [ext_resource type="Texture2D" uid="uid://d0kwbcwmqfw8g" path="res://assets/Turrets/turret_bottom.png" id="2_fp1i7"]
 [ext_resource type="Texture2D" uid="uid://pu0m7ppo713t" path="res://assets/Turrets/turret_cannon.png" id="3_8nenh"]
+[ext_resource type="AudioStream" uid="uid://c42bbdp6ct16m" path="res://assets/Sounds/nove_zvuky/shoot_cannon.wav" id="4_fp1i7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
 radius = 367.0872
@@ -31,6 +32,9 @@ shape = SubResource("CircleShape2D_he84e")
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=1524885056]
 wait_time = 0.5
+
+[node name="fire" type="AudioStreamPlayer" parent="." unique_id=234717306]
+stream = ExtResource("4_fp1i7")
 
 [connection signal="body_entered" from="range_Area2D" to="." method="_on_range_area_2d_body_entered"]
 [connection signal="body_exited" from="range_Area2D" to="." method="_on_range_area_2d_body_exited"]

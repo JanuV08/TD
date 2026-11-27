@@ -63,6 +63,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_next_btn_pressed() -> void:
+	Music.play_click()
 	if Global.levelWon:
 		Global.level += 1
 	else:
@@ -78,4 +79,5 @@ func _on_next_btn_pressed() -> void:
 
 
 func _on_menu_btn_pressed() -> void:
+	Music.play_click()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

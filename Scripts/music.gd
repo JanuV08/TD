@@ -11,3 +11,9 @@ func play_music(nova_hudba: AudioStream) -> void:
 
 func stop_music() -> void:
 	player.stop()
+	
+func play_click() -> void:
+	$ClickPlayer.play()
+
+func play_build() -> void:
+	$BuildSound.play()

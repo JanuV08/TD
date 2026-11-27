@@ -36,6 +36,7 @@ func take_damage(amount: int) -> void:
 		return
 		
 	current_hp -= amount
+	$CharacterBody2D/hit.play()
 	
 	if is_instance_valid(health_bar):
 		health_bar.value = current_hp

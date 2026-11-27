@@ -13,7 +13,6 @@ var selection_menu_instance = null
 
 func _ready():
 	$AnimatedSprite2D.play("default")
-	
 
 	if selection_menu_scene:
 		selection_menu_instance = selection_menu_scene.instantiate()
@@ -22,20 +21,17 @@ func _ready():
 		var is_railgun_only: bool = name.begins_with("Railgun") or get_parent().name.begins_with("Railgun")
 		selection_menu_instance.setup_for_slot(is_railgun_only)
 
-	
-
 func _on_mouse_entered():
 	if not is_occupied:
 		$AnimatedSprite2D.play("hover")
-
 
 func _on_mouse_exited():
 	if not is_occupied:
 		$AnimatedSprite2D.play("default")
 
-
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		Music.play_click()
 		if not is_occupied:
 			if selection_menu_instance:
 				var screen_center_x: float = get_viewport_rect().size.x / 2.0
