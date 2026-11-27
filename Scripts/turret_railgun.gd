@@ -53,13 +53,13 @@ func _on_range_area_2d_body_exited(body: Node2D) -> void:
 		find_target()
 
 func _on_damage_timer_timeout() -> void:
-<<<<<<< Updated upstream
+
 	if is_instance_valid(target):
 		$fire.play()
-=======
+
 	find_target()
 	if is_instance_valid(target) and not target.get("is_dead"):
->>>>>>> Stashed changes
+
 		# --- Vystřelení vizuálního paprsku ---
 		if bullet_scene != null:
 			var bullet = bullet_scene.instantiate()

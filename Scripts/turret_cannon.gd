@@ -56,15 +56,15 @@ func _on_range_area_2d_body_exited(body: Node2D) -> void:
 		find_target()
 
 func _on_damage_timer_timeout() -> void:
-<<<<<<< Updated upstream
+
 	if is_instance_valid(target):
 		$fire.play()
 		# --- NOVÉ: Vystřelení vizuálního náboje ---
-=======
+
 	find_target()
 	if is_instance_valid(target) and not target.get("is_dead"):
 		# --- Vystřelení vizuálního náboje ---
->>>>>>> Stashed changes
+
 		if bullet_scene != null:
 			var bullet = bullet_scene.instantiate()
 			bullet.global_position = $vez_turrety/Marker2D.global_position

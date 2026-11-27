@@ -81,12 +81,12 @@ func _on_next_btn_pressed() -> void:
 	Global.nextBtnPressed = true
 
 func _on_menu_btn_pressed() -> void:
-<<<<<<< Updated upstream
+
 	Music.play_click()
-=======
+
 	_reset_global_stats()
 	Global.levelWon = false
 	spusteno = false
 	get_tree().paused = false
->>>>>>> Stashed changes
+
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

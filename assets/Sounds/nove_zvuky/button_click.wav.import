@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dkb1c220omkdf"
+uid="uid://boh8cbc70aoil"
 path="res://.godot/imported/button_click.wav-7637591ad62872a9ed885ed4a6aaa8e7.sample"
 
 [deps]
@@ -18,11 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-<<<<<<< Updated upstream
-edit/loop_mode=1
-=======
 edit/loop_mode=0
->>>>>>> Stashed changes
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=2
