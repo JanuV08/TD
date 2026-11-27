@@ -2,65 +2,70 @@ extends Control
 
 var star_done = preload("res://assets/GUI/endMenu/end_menu_star_completed.png")
 var spusteno: bool = false
-func _ready() -> void:
-	pass
-func _process(_delta: float) -> void:
-	if Global.enemiesSpawned > 0 and Global.enemiesKilled == Global.enemiesSpawned and Global.health > 0:
-		if not spusteno:
-			spusteno = true
-			Music.stop_music()
-			$levelWon.play()
-		Global.levelWon = true
-		if Global.level == 1:
-			Global.lvl1Completed = true
-		if Global.level == 2:
-			Global.lvl2Completed = true
-		if Global.level == 3:
-			Global.lvl3Completed = true
-		if Global.level == 4:
-			Global.lvl4Completed = true
-		if Global.level == 5:
-			Global.lvl5Completed = true
-		visible = true
-	
-	if Global.enemiesSpawned > 0 and Global.enemiesKilled == Global.enemiesSpawned and Global.health <= 0:
-		if not spusteno:
-			spusteno = true
-			Music.stop_music()
-			$levelLost.play()
-		Global.levelWon = false
-		if Global.level == 1:
-			Global.lvl1Completed = false
-		if Global.level == 2:
-			Global.lvl2Completed = false
-		if Global.level == 3:
-			Global.lvl3Completed = false
-		if Global.level == 4:
-			Global.lvl4Completed = false
-		if Global.level == 5:
-			Global.lvl5Completed = false
-		visible = true
-	
-	
-	if Global.levelWon == false:
-		$TextureRect/Label.text = "DEFENSES BREACHED"
-		$TextureRect/nextBtn/Label.text = "RETRY"
-	if Global.levelWon == true:
-		if Global.health == 5:
-			$TextureRect/star_1.texture = star_done
-			$TextureRect/star_2.texture = star_done
-			$TextureRect/star_3.texture = star_done
-		if Global.health == 4 or Global.health == 3:
-			$TextureRect/star_1.texture = star_done
-			$TextureRect/star_2.texture = star_done
-		if Global.health < 3:
-			$TextureRect/star_3.texture = star_done
-		$TextureRect/Label.text = "SECTOR CLEARED"
-		$TextureRect/nextBtn/Label.text = "NEXT"
-		if Global.level == 5:
-			$TextureRect/nextBtn/Label.text = "MENU"
-			$TextureRect/nextBtn.visible = false
 
+# Počet levelů ve hře (zatím máte 1 level s 8 vlnami; až přidáte další mapy, zvedněte číslo)
+const TOTAL_LEVELS: int = 5
+
+func _ready() -> void:
+	# Pojistka, aby tlačítka Retry a Menu fungovala i po zapauzování hry
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	visible = false
+
+func _process(_delta: float) -> void:
+	# 1. Okamžitá prohra, jakmile dojdou životy základny (nemusí se čekat na konec vlny)
+	if Global.health <= 0 and not spusteno:
+		visible = true
+
+	# 2. Spustí se jen jednou ve chvíli, kdy se menu zobrazí (výhra z main.gd nebo prohra výše)
+	if visible and not spusteno:
+		spusteno = true
+		Music.stop_music()
+		get_tree().paused = true
+		
+		if Global.health > 0:
+			# --- VÝHRA (všech 8 vln poraženo) ---
+			$levelWon.play()
+			Global.levelWon = true
+			_set_level_completed(Global.level, true)
+			
+			if Global.health == 5:
+				$TextureRect/star_1.texture = star_done
+				$TextureRect/star_2.texture = star_done
+				$TextureRect/star_3.texture = star_done
+			elif Global.health >= 3:
+				$TextureRect/star_1.texture = star_done
+				$TextureRect/star_2.texture = star_done
+			else:
+				$TextureRect/star_1.texture = star_done
+				
+			$TextureRect/Label.text = "SECTOR CLEARED"
+			$TextureRect/nextBtn/Label.text = "NEXT"
+			
+			# Pokud je tohle poslední (jediný) level, skryjeme tlačítko NEXT a necháme jen MENU
+			if Global.level >= TOTAL_LEVELS:
+				$TextureRect/nextBtn.visible = false
+		else:
+			# --- PROHRA ---
+			$levelLost.play()
+			Global.levelWon = false
+			$TextureRect/Label.text = "DEFENSES BREACHED"
+			$TextureRect/nextBtn.visible = true
+			$TextureRect/nextBtn/Label.text = "RETRY"
+
+func _set_level_completed(lvl: int, completed: bool) -> void:
+	match lvl:
+		1: Global.lvl1Completed = completed
+		2: Global.lvl2Completed = completed
+		3: Global.lvl3Completed = completed
+		4: Global.lvl4Completed = completed
+		5: Global.lvl5Completed = completed
+
+func _reset_global_stats() -> void:
+	Global.health = 5
+	Global.enemyCount = 0
+	Global.enemiesKilled = 0
+	Global.enemiesSpawned = 0
+	Global.gold = 250 # Startovní zlato podle vybalancované ekonomiky
 
 func _on_next_btn_pressed() -> void:
 	Music.play_click()
@@ -69,15 +74,19 @@ func _on_next_btn_pressed() -> void:
 	else:
 		Global.levelWon = false
 
-	Global.nextBtnPressed = true
+	_reset_global_stats()
+	spusteno = false
 	visible = false
-	Global.health = 5
-	Global.enemyCount = 0
-	Global.enemiesKilled = 0   
-	Global.enemiesSpawned = 0   
-	Global.gold = 1000
-
+	get_tree().paused = false
+	Global.nextBtnPressed = true
 
 func _on_menu_btn_pressed() -> void:
+<<<<<<< Updated upstream
 	Music.play_click()
+=======
+	_reset_global_stats()
+	Global.levelWon = false
+	spusteno = false
+	get_tree().paused = false
+>>>>>>> Stashed changes
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
