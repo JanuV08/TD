@@ -44,6 +44,7 @@ loop = false
 script = ExtResource("2_6bp64")
 
 [node name="PauseMenu" parent="." unique_id=1427811714 instance=ExtResource("3_344ge")]
+process_mode = 3
 
 [node name="Konec" parent="." unique_id=385382761 instance=ExtResource("4_ynf5e")]
 position = Vector2(1579, 512)
