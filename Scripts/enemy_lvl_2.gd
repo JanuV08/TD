@@ -8,12 +8,12 @@ extends Node2D
 var last_position: Vector2 = Vector2.ZERO
 var is_dead: bool = false
 
-@export var damage_to_base : int = 1
+@export var damage_to_base : int = 2
 @export var enemy_type: String = "lvl2"
 
 var current_hp: int
-@export var max_hp: int = 10
-@export var speed: float = 200.0
+@export var max_hp: int = 190
+@export var speed: float = 75.0
 
 func _ready() -> void:
 	last_position = global_position
@@ -42,7 +42,6 @@ func take_damage(amount: int) -> void:
 		health_bar.value = current_hp
 		
 	if current_hp <= 0:
-		Global.gold += 50
 		die()
 		return
 		
@@ -56,6 +55,7 @@ func die() -> void:
 	is_dead = true
 	Global.enemyCount -= 1
 	Global.enemiesKilled += 1
+	Global.gold += 30
 	
 	# Vypneme pohyb a kolizi, aby do něj už věže nestřílely
 	set_process(false)

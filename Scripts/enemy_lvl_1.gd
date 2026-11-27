@@ -11,8 +11,8 @@ var is_dead: bool = false
 @export var damage_to_base : int = 1
 @export var enemy_type: String = "lvl1"
 
-@export var max_hp: int = 5
-@export var speed: float = 250.0
+@export var max_hp: int = 40
+@export var speed: float = 105.0
 var current_hp: int
 
 func _ready() -> void:
@@ -42,7 +42,6 @@ func take_damage(amount: int) -> void:
 		health_bar.value = current_hp
 		
 	if current_hp <= 0:
-		Global.gold += 25
 		die()
 		return
 	
@@ -56,6 +55,7 @@ func die() -> void:
 	is_dead = true
 	Global.enemyCount -= 1
 	Global.enemiesKilled += 1
+	Global.gold += 15
 	
 	# Vypneme pohyb a kolizi, aby do něj už věže nestřílely
 	set_process(false)

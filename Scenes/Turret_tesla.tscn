@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cnc1ehmwgq0fl" path="res://assets/Sounds/nove_zvuky/shoot_tesla.wav" id="4_k4vo1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_he84e"]
-radius = 198.00252
+radius = 195.0
 
 [node name="tesla" type="Node2D" unique_id=1786636331]
 script = ExtResource("1_oohm5")
@@ -26,6 +26,7 @@ texture = ExtResource("3_k4vo1")
 shape = SubResource("CircleShape2D_he84e")
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=1659445549]
+wait_time = 0.5
 
 [node name="fire" type="AudioStreamPlayer" parent="." unique_id=621135741]
 stream = ExtResource("4_k4vo1")

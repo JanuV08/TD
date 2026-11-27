@@ -5,8 +5,8 @@ extends Node2D
 
 
 var enemies_in_range: Array = []
-var damage_amount: int = 10
-@export var cost: int = 250
+var damage_amount: int = 5
+@export var cost: int = 180
 
 func _get_enemy_node(body: Node2D) -> Node2D:
 	if body == null:

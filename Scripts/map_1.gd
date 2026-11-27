@@ -70,7 +70,7 @@ func reset(lvl,enemyCount,hp) -> void:
 	Global.enemiesSpawned = enemyCount
 	Global.enemiesKilled = 0
 	Global.health = hp
-	Global.gold = 1000
+	Global.gold = 250
 	
 func _on_back_btn_pressed() -> void:
 	Music.play_click()

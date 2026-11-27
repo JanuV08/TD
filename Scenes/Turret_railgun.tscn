@@ -30,7 +30,7 @@ position = Vector2(-19.850267, 3.372835e-07)
 shape = SubResource("CircleShape2D_5gviv")
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=288386683]
-wait_time = 2.5
+wait_time = 2.6
 
 [node name="fire" type="AudioStreamPlayer" parent="." unique_id=1321548717]
 stream = ExtResource("4_faqoq")
